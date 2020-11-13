@@ -1,0 +1,21 @@
+@mixin reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin title {
+  font-family: $font-basic;
+  font-size: 40px;
+  font-weight: 700;
+  color: $title;
+}
+
+// @mixin text {
+//   font-family: $font-extra;
+//   font-size: 17px;
+//   font-weight: 400;
+//   color: $text;
+// }
+
