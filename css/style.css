@@ -409,12 +409,13 @@ img {
     top: 0;
     -webkit-transform: none;
             transform: none;
-    background: #ffffff;
+    background: #FFFFFF;
     -webkit-box-shadow: none;
             box-shadow: none;
     opacity: 1; }
   .popup-header__block {
     max-width: 100%;
+    margin-left: 0;
     margin: auto 17px;
     text-align: center;
     -webkit-box-align: center;
@@ -580,7 +581,7 @@ img {
     top: 0;
     -webkit-transform: none;
             transform: none;
-    background: #ffffff;
+    background: #FFFFFF;
     -webkit-box-shadow: none;
             box-shadow: none;
     opacity: 1; }
