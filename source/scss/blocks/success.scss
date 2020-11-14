@@ -119,4 +119,58 @@
       line-height: 22px;
     }
   }
+
+  // .popup-header__block {
+  //   max-width: 100%;
+  //   margin-left: 0;
+  //   margin: auto 17px;
+  //   text-align: center;
+  //   align-items: center;
+
+  //   & h2 {
+  //     @include title;
+  //     font-size: 24px;
+  //     line-height: 29px;
+  //   }
+
+  //   & p {
+  //     font-size: 14px;
+  //     line-height: 22px;
+  //   }
+  // }
+
+  // .popup-header__close {
+  //   right: 24px;
+  //   top: 24px;
+  // }
+
+  // .popup-header__form {
+  //   width: 100%;
+  // }
+
+  // .popup-header__info {
+  //   display: flex;
+  //   flex-direction: column;
+
+  //   & input {
+  //     font-variant: small-caps;
+  //     font-weight: 500;
+  //     margin-bottom: 8px;
+  //     padding: 20px 40px;
+
+  //     border-radius: 80px;
+  //     border: 2px solid $border-input;
+  //     box-sizing: border-box;
+  //   }
+
+  //   & .popup-header__btn {
+  //     width: 265px;
+
+  //     min-height: 59px;
+  //     align-self: center;
+
+  //     margin-bottom: 15px;
+  //     margin-top: 24px;
+  //   }
+  // }
 }
