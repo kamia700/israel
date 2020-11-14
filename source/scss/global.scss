@@ -29,10 +29,13 @@ img {
   height: auto;
 }
 
+.lock {
+  overflow: hidden;
+}
 
-// .hidden {
-//   display: none;
-// }
+.hidden {
+  display: none;
+}
 
 // ul {
 //   @include reset;

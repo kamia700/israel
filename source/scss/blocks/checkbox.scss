@@ -1,0 +1,37 @@
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  width: 265px;
+  align-self: center;
+
+  & label {
+    position: relative;
+    font-size: 13px;
+
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  & input {
+    margin: 0;
+  }
+
+  & .checkbox__indicator {
+
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+
+    background-image: url("../img/checkbox.svg");
+  }
+
+  & input:checked + .checkbox__indicator {
+    background-image: url("../img/checkbox-on.svg");
+  }
+
+  & input:focus + .checkbox__indicator {
+    outline: 2px dotted $text;
+  }
+}

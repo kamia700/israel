@@ -6,6 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Учёба, путешествие и карьера для молодёжи в Израиле</title>
 
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font">
+  <link rel="preload" href="fonts/FiraSans-Medium.woff2" as="font">
+  <link rel="preload" href="fonts/FiraSans-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/FiraSans-Bold.woff2" as="font">
+  <link rel="preload" href="fonts/Raleway-ExtraBold.woff2" as="font">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Обучение в Израиле — вся информация об образовательных программах и грантах">
   <meta name="Keywords" content="путешествие, образование, учеба, карьера, израиль">
@@ -52,7 +58,7 @@
             <a class="main-nav__tel" href="#">+ (972) 2 – 621 – 6581</a>
           </li>
           <li>
-            <a class="main-nav__call" href="#">заказать звонок</a>
+            <a class="main-nav__call open-modal" href="#">заказать звонок</a>
           </li>
         </ul>
       </nav>
@@ -65,26 +71,31 @@
     </section>
 
     <section class="header__modal popup-header hidden">
-      <div class="popup-header__block">
-        <h2>Заказать звонок</h2>
-        <p>Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
-        <form class="popup-header__form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
-          <div class="popup-header__info">
-            <label class="visually-hidden" for="name">Имя</label>
-            <input id="name" name="name" type="name" placeholder="имя">
+      <div class="popup-header__wrapper">
+        <div class="popup-header__block">
+          <h2>Заказать звонок</h2>
+          <p>Оставьте ваши контактные данные, мы&nbsp;свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
+          <form class="popup-header__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
+            <div class="popup-header__info">
+              <label class="visually-hidden" for="name">Имя</label>
+              <input class="popup-header__name" id="name" name="name" type="name" placeholder="имя">
 
-            <label class="visually-hidden" for="tel">Телефон</label>
-            <input id="tel" name="tel" type="tel" placeholder="телефон" required>
+              <label class="visually-hidden" for="tel">Телефон</label>
+              <input class="popup-header__tel tel" id="tel" name="tel" type="tel" placeholder="телефон" required>
 
 
-            <button class="popup-header__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
-            <div class="popup-header__checkbox">
-              <input type="checkbox" id="checkbox" name="checkbox" required>
-              <label for="checkbox">Нажимая на кнопку, вы даёте согласие на обработку персональных данных</label>
+              <button class="popup-header__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+              <div class="popup-header__checkbox checkbox">
+                <label for="checkbox">
+                  <input class="checkbox__input visually-hidden" type="checkbox" id="checkbox" name="checkbox" checked>
+                  <span class="checkbox__indicator"></span>
+                  Нажимая на кнопку, вы даёте согласие на обработку персональных данных
+                </label>
+              </div>
             </div>
-          </div>
-        </form>
-        <span class="popup-header__close" tabindex="0">&times;</span>
+          </form>
+          <button class="popup-header__close close" type="button" aria-label="Закрыть"></button>
+        </div>
       </div>
     </section>
   </header>
@@ -180,11 +191,11 @@
       <div class="contact__wrapper">
         <h2>Хочу поехать!</h2>
         <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
-        <form method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
-          <div class="contact__form form">
-            <label class="form__label visually-hidden" for="tel">Введите телефон</label>
-            <input class="form__input" id="tel" name="tel" type="tel" pattern="\+7\s\d{10}" placeholder="телефон" required>
-            <button class="form__btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+        <form class="contact__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
+          <div class="contact__form-block">
+            <label class="contact__form-label visually-hidden" for="tel">Введите телефон</label>
+            <input class="contact__form-input" id="tel" name="tel" type="tel" pattern="\+7\s\d{10}" placeholder="телефон" required>
+            <button class="contact__form-btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
         </form>
       </div>
@@ -424,8 +435,8 @@
           <p class="feedback__title">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
           <p class="feedback__text">Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!</p>
         </div>
-        <form method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
-          <div class="feedback__form">
+        <form class="feedback__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
+          <div class="feedback__form-block">
             <label class="visually-hidden" for="name">Имя</label>
             <input id="name" name="name" type="name" placeholder="имя">
 
@@ -436,43 +447,65 @@
         </form>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="footer__logo">
-        <img src="img/logo-footer.svg" alt="Логотип">
-      </div>
-      <div class="footer__copyright">
-        <p>Copyright someDesignCompany ©2019</p>
-      </div>
-      <ul>
-        <li>
-          <a class="footer__button" href="http://facebook.com/" aria-label="Фейсбук">
-            <svg class="footer__fb" width="24" height="24">
-              <use xlink:href="#icon-facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a class="footer__button" href="http://twitter.com/" aria-label="Твиттер">
-            <svg class="footer__twitter" width="24" height="24">
-              <use xlink:href="#icon-twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a class="footer__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-            <svg class="footer__inst" width="24" height="24">
-              <use xlink:href="#icon-instagram"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-
-    </footer>
   </main>
 
-<!-- <script src="js/vendor.js"></script>
-<script src="js/main.js"></script> -->
+  <footer class="footer">
+    <div class="footer__logo">
+      <img src="img/logo-footer.svg" alt="Логотип">
+    </div>
+    <div class="footer__copyright">
+      <p>Copyright someDesignCompany ©2019</p>
+    </div>
+    <ul>
+      <li>
+        <a class="footer__button" href="http://facebook.com/" aria-label="Фейсбук">
+          <svg class="footer__fb" width="24" height="24">
+            <use xlink:href="#icon-facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="footer__button" href="http://twitter.com/" aria-label="Твиттер">
+          <svg class="footer__twitter" width="24" height="24">
+            <use xlink:href="#icon-twitter"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a class="footer__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+          <svg class="footer__inst" width="24" height="24">
+            <use xlink:href="#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
 
+  </footer>
+
+  <!-- Сообщения об отправке формы -->
+  <template id="success">
+    <section class="success">
+      <div class="success__wrapper">
+        <div class="success__block">
+          <h2>Заявка принята</h2>
+          <p>Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+          <button class="success__btn btn" type="submit" aria-label="Понятно">понятно</button>
+          <button class="success__close close" type="button" aria-label="Закрыть"></button>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="error">
+    <section class="error">
+      <div class="error__wrapper">
+        <p>Ошибка отправки данных!</p>
+        <p>Попробуйте позже</p>
+      </div>
+    </section>
+  </template>
+
+<script src="js/vendor.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
