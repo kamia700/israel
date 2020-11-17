@@ -16,6 +16,8 @@
   <meta name="description" content="Обучение в Израиле — вся информация об образовательных программах и грантах">
   <meta name="Keywords" content="путешествие, образование, учеба, карьера, израиль">
   <link rel="stylesheet" href="css/style.min.css">
+
+  <script src="https://unpkg.com/imask"></script>
   <!-- Pixel Glass -->
   <style>
     HTML {
@@ -37,6 +39,8 @@
   <link rel="stylesheet" href="https://yoksel.github.io/pixel-glass-js/styles.css">
   <script src="https://yoksel.github.io/pixel-glass-js/script.js"></script>
   <!-- // Pixel Glass -->
+
+
 </head>
 
 <body>
@@ -81,7 +85,7 @@
               <input class="popup-header__name" id="name" name="name" type="name" placeholder="имя">
 
               <label class="visually-hidden" for="tel">Телефон</label>
-              <input class="popup-header__tel tel" id="tel" name="tel" type="tel" placeholder="телефон" required>
+              <input class="popup-header__tel tel" id="tel" name="tel" type="tel" maxlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон" required>
 
 
               <button class="popup-header__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
@@ -105,86 +109,90 @@
 
     <section class="about">
       <h2>О программе</h2>
-      <p>«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут.
-        Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле.
-        В течение освоения программ предусмотрен грант от 4200 до 8400$.</p>
-      <div class="about__player">
-        <a href="#">
-          <picture>
-            <!-- <source type="image/webp" srcset="img/about@1x.webp 1x, img/about@2x.webp 2x"> -->
-            <!-- 1х: 870px; 2x: 1756px -->
-            <img src="img/about@1x.png" srcset="img/about@2x.jpg 2x" width="870" height="460" alt="заставка для видео">
-          </picture>
-        </a>
-        <button aria-label="Запустить видео" type="button">
-          <svg class="video__btn" width="15" height="19">
-            <use xlink:href="#icon-play"></use>
-          </svg>
-        </button>
+      <p>«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут. Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле. В течение освоения программ предусмотрен грант от 4200 до 8400$.</p>
+      <div class="about__wrapper">
+        <div class="about__player">
+          <a href="#">
+            <picture>
+              <!-- <source type="image/webp" srcset="img/about@1x.webp 1x, img/about@2x.webp 2x"> -->
+              <!-- 1х: 320px; 2x: 640px -->
+              <source media="(max-width: 767px)" width="320" height="224" srcset="img/about-mobile@1x.png 1x, img/about-mobile@2x.png 2x">
+              <!-- 1х: 870px; 2x: 1756px -->
+              <img src="img/about@1x.png" srcset="img/about@2x.jpg 2x" width="870" height="460" alt="заставка для видео">
+            </picture>
+          </a>
+          <button class="about__play" aria-label="Запустить видео" type="button">
+            <svg class="about__btn" width="15" height="19">
+              <use xlink:href="#icon-play"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
     <section class="programs">
-      <h2>О программе</h2>
-      <div class="programs__tabs tabs" id="tabs">
-        <a href="#tab-1" class="tabs__item active" data-tab-name="tab-1">Общие</a>
-        <a href="#tab-2" class="tabs__item" data-tab-name="tab-2">Акакдемические</a>
-        <a href="#tab-3" class="tabs__item" data-tab-name="tab-3">Стажировки</a>
-        <a href="#tab-4" class="tabs__item" data-tab-name="tab-4">Волонтерство</a>
-        <a href="#tab-5" class="tabs__item" data-tab-name="tab-5">Религиозные</a>
-      </div>
+      <h2>Программы</h2>
+      <section class="programs__tabs tabs">
+        <div class="tabs__list" id="tabs">
+          <a href="#tab-1" class="tabs__item tabs__item--basic tabs__item--one" data-tab-name="tab-1"><span>Общие</span></a>
+          <a href="#tab-2" class="tabs__item tabs__item--academ tabs__item--active" data-tab-name="tab-2"><span>Академические</span></a>
+          <a href="#tab-3" class="tabs__item tabs__item--internship" data-tab-name="tab-3"><span>Стажировки</span></a>
+          <a href="#tab-4" class="tabs__item tabs__item--volunteering" data-tab-name="tab-4"><span>Волонтерство</span></a>
+          <a href="#tab-5" class="tabs__item tabs__item--religious" data-tab-name="tab-5"><span>Религиозные</span></a>
+        </div>
 
-      <ul class="tabs__content">
-        <li class="tabs__inset active tab-1">
-          <div class="tabs__wrapper">
-            <article class="tabs__description description">
-              <h3 class="description__title">Общие</h3>
-              <p class="description__text">Хочешь провести семестр или год в Израиле, знакомясь с различными культурами и идеями, традициями и стилем жизни, изучая иврит на программе Маса?</p>
-              <p class="description__text">Проект Маса предоставляет потрясающую возможность совершить незабываемое путешествие в страну с тысячелетней историей и уникальным образом жизни, где ты сможешь по-настоящему познать свои исторические корни и почувствовать себя неотъемлемой частью еврейского народа.</p>
-            </article>
-          </div>
-        </li>
+        <ul class="tabs__content">
+          <li class="tabs__inset tab-1">
+            <div class="tabs__wrapper">
+              <article class="tabs__description description">
+                <h3 class="description__title">Общие</h3>
+                <p class="description__text">Хочешь провести семестр или год в Израиле, знакомясь с различными культурами и идеями, традициями и стилем жизни, изучая иврит на программе Маса?</p>
+                <p class="description__text">Проект Маса предоставляет потрясающую возможность совершить незабываемое путешествие в страну с тысячелетней историей и уникальным образом жизни, где ты сможешь по-настоящему познать свои исторические корни и почувствовать себя неотъемлемой частью еврейского народа.</p>
+              </article>
+            </div>
+          </li>
 
-        <li class="tabs__inset active tab-2">
-          <div class="tabs__wrapper">
-            <article class="tabs__description description">
-              <h3 class="description__title">Академические</h3>
-              <p class="description__text">Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это также академический центр, живая лаборатория идей и творческого исследования.</p>
-              <p class="description__text">Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательного и делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
-            </article>
-          </div>
-        </li>
+          <li class="tabs__inset tabs__inset--active tab-2">
+            <div class="tabs__wrapper">
+              <article class="tabs__description description">
+                <h3 class="description__title">Академические</h3>
+                <p class="description__text">Провести семестр или год за рубежом, знакомясь с различными культурами и&nbsp;идеями, традициями и стилем жизни — вот&nbsp;что&nbsp;такое учеба за границей! Израиль —&nbsp;это&nbsp;не только центр религиозного мира, это также академический центр, живая лаборатория идей и творческого исследования.</p>
+                <p class="description__text">Может быть, Вы заинтересованы в&nbsp;изучении&nbsp;социологии, мира, юриспруденции, биологии, сравнительной религии, законодательного и&nbsp;делового администрирования или искусства? Здесь, в&nbsp;Израиле, Вы сможете&nbsp;изучить все это в&nbsp;удивительной университетской среде.</p>
+              </article>
+            </div>
+          </li>
 
-        <li class="tabs__inset active tab-3">
-          <div class="tabs__wrapper">
-            <article class="tabs__description description">
-              <h3 class="description__title">Стажировки</h3>
-              <p class="description__text">Стажировка дает возможность оказаться внутри профессионального мира своей специальности в Израиле, получить новые знания и опыт, установить личные и деловые контакты.</p>
-              <p class="description__text">От 15% до 25 % наших студентов получают предложения на работу в компаниях, в которых проходили стажировку</p>
-            </article>
-          </div>
-        </li>
+          <li class="tabs__inset tab-3">
+            <div class="tabs__wrapper">
+              <article class="tabs__description description">
+                <h3 class="description__title">Стажировки</h3>
+                <p class="description__text">Стажировка дает возможность оказаться внутри профессионального мира своей специальности в Израиле, получить новые знания и опыт, установить личные и деловые контакты.</p>
+                <p class="description__text">От 15% до 25 % наших студентов получают предложения на работу в компаниях, в которых проходили стажировку</p>
+              </article>
+            </div>
+          </li>
 
-        <li class="tabs__inset active tab-4">
-          <div class="tabs__wrapper">
-            <article class="tabs__description description">
-              <h3 class="description__title">Волонтерство</h3>
-              <p class="description__text">Маса предлагает уникальные возможности для волонтерской деятельности по всему Израилю. Вы сможете внести свой неоценимый вклад в развитие  израильского общества, сотрудничая с различными общинами и социально уязвимыми группами населения.</p>
-              <p class="description__text">Программы волонтерства фокусируются на создании и укреплении общин; помощи молодежи, находящейся в группе риска; поддержке мирного сосуществования евреев, арабов и других местных общин.</p>
-            </article>
-          </div>
-        </li>
+          <li class="tabs__inset tab-4">
+            <div class="tabs__wrapper">
+              <article class="tabs__description description">
+                <h3 class="description__title">Волонтерство</h3>
+                <p class="description__text">Маса предлагает уникальные возможности для волонтерской деятельности по всему Израилю. Вы сможете внести свой неоценимый вклад в развитие  израильского общества, сотрудничая с различными общинами и социально уязвимыми группами населения.</p>
+                <p class="description__text">Программы волонтерства фокусируются на создании и укреплении общин; помощи молодежи, находящейся в группе риска; поддержке мирного сосуществования евреев, арабов и других местных общин.</p>
+              </article>
+            </div>
+          </li>
 
-        <li class="tabs__inset active tab-5">
-          <div class="tabs__wrapper">
-            <article class="tabs__description description">
-              <h3 class="description__title">Религиозные</h3>
-              <p class="description__text">Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это также академический центр, живая лаборатория идей и творческого исследования.</p>
-              <p class="description__text">Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательного и делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
-            </article>
-          </div>
-        </li>
-      </ul>
+          <li class="tabs__inset tab-5">
+            <div class="tabs__wrapper">
+              <article class="tabs__description description">
+                <h3 class="description__title">Религиозные</h3>
+                <p class="description__text">Провести семестр или год за рубежом, знакомясь с различными культурами и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это также академический центр, живая лаборатория идей и творческого исследования.</p>
+                <p class="description__text">Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательного и делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
+              </article>
+            </div>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section class="contact">
@@ -506,6 +514,8 @@
   </template>
 
 <script src="js/vendor.js"></script>
+<!-- <script src="https://unpkg.com/imask"></script> -->
+
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,165 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1366px;
+  margin: 0 auto;
+
+  background-image: url("../img/watercolor_bg@1x.png");
+  background-position: center 150px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/watercolor_bg@2x.png");
+  }
+
+  & h2 {
+    @include title;
+    margin-top: -12px;
+    margin-bottom: 7px;
+  }
+
+  & p {
+    font-size: 17px;
+    line-height: 29px;
+    max-width: 690px;
+    text-align: center;
+  }
+}
+
+.about__wrapper {
+  width: 100%;
+  min-height: auto;
+  padding-bottom: 110px;
+}
+
+.about__player {
+  position: relative;
+  width: 65%;
+
+  margin: 0 auto;
+  padding-left: 8px;
+  padding-top: 30px;
+
+  img {
+    width: 870px;
+  }
+
+  button {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+
+    top: 46%;
+    left: 50.2%;
+    background-color: $white;
+    transform: translateX(-50.2%);
+    padding: 0;
+
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 96px;
+      height: 96px;
+
+      top: -25%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-image: url("../img/ellipse-play.svg");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.about__play {
+  svg {
+    fill: $title;
+  }
+
+  &:hover svg {
+    fill: $blue-hover;
+  }
+
+  &:active svg {
+    fill: $title;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 4px $btn-shadow;
+  }
+
+  &:active {
+    box-shadow: 0 1px 4px $btn-shadow;
+    background: $bg-play;
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .about {
+    background-image: url("../img/watercolor_bg-mobile@1x.png");
+    background-position: center 240px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/watercolor_bg-mobile@2x.png");
+    }
+
+    & h2 {
+      font-size: 32px;
+      line-height: 39px;
+      margin-top: 42px;
+    }
+
+    & p {
+      font-size: 16px;
+      line-height: 26px;
+      max-width: 100%;
+      text-align: start;
+
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  .about__wrapper {
+    padding-bottom: 0;
+  }
+
+  .about__player {
+    width: 100%;
+
+    padding-left: 0;
+    padding-top: 33px;
+
+    img {
+      width: 100%;
+    }
+
+    button {
+      width: 53.33px;
+      height: 53.33px;
+
+      top: 48%;
+
+      &::after {
+        width: 80px;
+        height: 80px;
+
+        background-image: url("../img/ellipse-play-mobile.svg");
+      }
+    }
+  }
+
+  .about__play {
+    svg {
+      width: 12.5px;
+      height: 15.83px;
+    }
+  }
+}

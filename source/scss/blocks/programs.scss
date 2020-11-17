@@ -1,0 +1,53 @@
+.programs {
+  position: relative;
+  max-width: 1366px;
+  margin: 0 auto;
+
+  background-image: url("../img/sketch-review@1x.png");
+  background-position: right 37px;
+  background-repeat: no-repeat;
+  background-size: 50%;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/sketch-review@2x.png");
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    @include title;
+    margin-left: 15.5%;
+    margin-top: 87px;
+    margin-bottom: 72px;
+  }
+}
+
+.programs__tabs {
+  display: flex;
+  margin-left: 15.5%;
+  max-width: 100%;
+}
+
+@media (max-width: $width-mobile) {
+  .programs {
+    background-position: 33px 195px;
+    background-size: 95%;
+
+    & h2 {
+      font-size: 32px;
+      line-height: 39px;
+      text-align: center;
+
+      margin-left: 0;
+      margin-top: 75px;
+
+      margin-bottom: 15px;
+    }
+  }
+
+  .programs__tabs {
+    flex-direction: column;
+    margin-left: 0;
+  }
+}

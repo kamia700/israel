@@ -37,6 +37,12 @@ img {
   display: none;
 }
 
-// ul {
-//   @include reset;
-// }
+.validation-error:invalid {
+  box-shadow: none;
+  border-color: $input-error;
+}
+
+.validation-success:valid {
+  box-shadow: none;
+  border-color: $text;
+}
