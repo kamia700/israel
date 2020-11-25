@@ -13,10 +13,11 @@
   & p {
     font-size: 15px;
     line-height: 26px;
+    opacity: 0.87;
   }
 }
 
-@media (max-width: $width-mobile) {
+@media (max-width: $mobile-width) {
   .description {
     & h3 {
       font-size: 24px;

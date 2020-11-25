@@ -1,0 +1,132 @@
+.photo {
+  display: flex;
+  justify-content: flex-end;
+
+  max-width: 1366px;
+  min-height: 585px;
+  margin: 0 auto;
+
+  background-color: $text;
+  background-image: url("../img/cynthia@1x.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/cynthia@2x.jpg");
+  }
+}
+
+.photo__block {
+  width: 43%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-bottom: 5.5%;
+
+  & h2 {
+    @include title;
+    margin: 0;
+    margin-left: 18px;
+    margin-bottom: 24px;
+  }
+
+  & p {
+    font-size: 17px;
+    line-height: 29px;
+    text-align: left;
+    color: $white;
+    opacity: 0.87;
+    text-shadow: 0 1px 4px $btn-shadow-012;
+
+    margin: 0;
+    margin-left: 20px;
+    letter-spacing: 0.1px;
+    max-width: 68%;
+  }
+
+  & a {
+    display: block;
+    position: relative;
+    margin-left: 18px;
+    margin-top: 48px;
+    padding: 19px 41px;
+    padding-left: 72px;
+    min-width: 230px;
+  }
+
+  & svg {
+    position: absolute;
+    top: 50%;
+    left: 17%;
+    transform: translateY(-50%);
+
+    width: 24px;
+    height: 24px;
+
+    fill: $white;
+    opacity: 1;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .photo__block {
+    padding-bottom: 0;
+
+    & p {
+      max-width: 90%;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .photo {
+    min-height: 400px;
+    justify-content: center;
+
+    background-image: linear-gradient(to bottom, $white 30%, $text 40%, $white 70%);
+  }
+
+  .photo__block {
+    width: 100%;
+    align-items: center;
+
+    background-image: url("../img/cynthia-mobile@1x.jpg");
+    background-position: center 40%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/cynthia-mobile@2x.jpg");
+    }
+
+    & h2 {
+      max-width: 100%;
+      margin-left: 0;
+      margin-bottom: 30%;
+      margin-top: 52px;
+    }
+
+    & p {
+      font-size: 16px;
+      line-height: 26px;
+      max-width: 400px;
+      margin-left: 22px;
+    }
+
+    & a {
+      margin: 0 auto;
+      margin-top: 57px;
+
+      min-width: 264px;
+      margin-bottom: 70px;
+    }
+
+    & svg {
+      left: 22%;
+    }
+  }
+}

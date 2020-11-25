@@ -61,13 +61,13 @@
   }
 }
 
-@media (max-width: $width-mobile) {
+@media (max-width: $mobile-width) {
   .intro {
     min-height: 500px;
     margin-top: 0;
     background-image: url("../img/photo_girl-mobile@1x.png"), url("../img/israel-mobile@1x.png");
-    background-position: center, center 22%;
-    background-size: auto, 100%;
+    background-position: center 56%, center 20%;
+    background-size: 320px, 100%;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/photo_girl-mobile@2x.png"), url("../img/israel-mobile@2x.png");
@@ -83,6 +83,6 @@
   }
 
   .intro__scroll {
-    margin-bottom: 38px;
+    margin-bottom: 45px;
   }
 }

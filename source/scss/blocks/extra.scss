@@ -1,0 +1,280 @@
+.extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 1366px;
+  min-height: 950px;
+  margin: 0 auto;
+
+  margin-top: -210px;
+
+  background-image: url("../img/watch@1x.png"), url("../img/watercolor_bg3@1x.jpg");
+  background-position: right 645px, 100% -10px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 90px 150px, contain;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/watch@2x.png"), url("../img/watercolor_bg3@2x.jpg");
+  }
+
+  & h2 {
+    @include title;
+    margin-bottom: 7px;
+    letter-spacing: -0.7px;
+  }
+
+  & p {
+    font-size: 17px;
+    line-height: 29px;
+    text-align: right;
+    max-width: 54%;
+    padding-right: 19px;
+    z-index: 1;
+  }
+}
+
+.extra__slider {
+  width: 84.8%;
+
+  margin-bottom: 147px;
+}
+
+.extra__slider-dots {
+  display: none;
+}
+
+.extra__list {
+  @include reset;
+  display: grid;
+  grid-template-columns: 42% 20% 16% 22%;
+  grid-gap: 0.9%;
+  grid-template-rows: 1fr 1fr;
+
+
+  & :not(:first-child) {
+    padding-top: 15px;
+  }
+
+  & .extra__item--first {
+    grid-row: 1/3;
+    margin-top: -53px;
+  }
+
+  & .extra__item--third {
+    grid-column: 3/5;
+  }
+
+  & .extra__item--fourth {
+    grid-column: 2/4;
+    margin-top: -12px;
+  }
+
+  & .extra__item--fifth {
+    grid-column: 4;
+    margin-top: -12px;
+    margin-left: 4px;
+  }
+}
+
+.extra__item {
+  & figure {
+    position: relative;
+    margin: 0;
+  }
+
+  & figcaption {
+    position: absolute;
+
+    left: 33px;
+    bottom: 38px;
+
+    color: $white;
+    font-family: $font-extra;
+    text-shadow: 0 1px 4px $btn-shadow-012;
+
+    font-weight: 800;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: -0.1px;
+  }
+}
+
+.extra__item--first figcaption {
+  left: 40px;
+}
+
+.extra__item--second figcaption,
+.extra__item--fifth figcaption {
+  width: 120px;
+  left: 25px;
+}
+
+.extra__item--third figcaption,
+.extra__item--first figcaption {
+  width: 320px;
+}
+
+@media (max-width: $tablet-width) {
+  .extra {
+    min-height: 845px;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .extra__item--third figcaption,
+  .extra__item--first figcaption {
+    width: auto;
+  }
+
+  .extra__item {
+    & figcaption {
+      font-size: 17px;
+      line-height: 19px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .extra {
+    margin-top: 0;
+    min-height: 760px;
+    background-image: none, none;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: none, none;
+    }
+
+    & h2 {
+      font-size: 32px;
+      line-height: 39px;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+
+    & p {
+      font-size: 16px;
+      line-height: 26px;
+      text-align: left;
+      max-width: 90%;
+      padding-right: 12px;
+    }
+  }
+
+  .extra__slider {
+    width: 100%;
+    max-width: 750px;
+
+    margin-top: 7px;
+    margin-bottom: 25px;
+  }
+
+  .extra__list {
+    display: block;
+    grid-template-columns: none;
+    grid-gap: 0;
+    grid-template-rows: none;
+
+    overflow: hidden;
+    padding: 0;
+    min-width: 0;
+    height: auto;
+
+    & :not(:first-child) {
+      padding-top: 0;
+    }
+
+    & .extra__item--first {
+      margin-top: 0;
+    }
+
+    & .extra__item--fourth {
+      margin-top: 0;
+    }
+
+    & .extra__item--fifth {
+      margin-top: 0;
+      margin-left: 0;
+    }
+  }
+
+  .extra__item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+
+    & figure {
+      width: 91%;
+    }
+
+    & img {
+      width: 100%;
+    }
+
+    & figcaption {
+      text-align: center;
+      letter-spacing: 0.5px;
+      bottom: 33px;
+      left: 50%;
+      max-width: 256px;
+      width: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .extra__item--second figcaption,
+  .extra__item--fifth figcaption {
+    bottom: 30px;
+  }
+
+  .extra__item--first {
+    & img {
+      width: 91%;
+      height: 99%;
+    }
+  }
+
+  .extra__item--second {
+    & img {
+      width: 91%;
+      height: 99%;
+    }
+  }
+
+  .extra__item--third {
+    overflow: hidden;
+
+    & img {
+      max-width: none;
+      width: 91%;
+      height: 95%;
+      object-fit: cover;
+      object-position: -225px;
+    }
+  }
+
+  .extra__item--fourth {
+    overflow: hidden;
+
+    & img {
+      max-width: none;
+      width: 91%;
+      height: 95%;
+      object-fit: cover;
+      object-position: -67px;
+    }
+  }
+
+  .extra__item--fifth {
+    overflow: hidden;
+
+    & img {
+      max-width: none;
+      width: 91%;
+      height: 95%;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+.accordion__list {
+  @include reset;
+  width: 98%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  counter-reset: myCounter;
+
+  & li {
+    border-bottom: 1px solid $border-02;
+  }
+}
+
+.accordion__btn {
+  position: relative;
+
+  display: block;
+
+  background: transparent;
+  cursor: pointer;
+
+  max-width: 100%;
+  padding-left: 29px;
+  padding-top: 36px;
+  padding-bottom: 34px;
+  padding-right: 0;
+
+  &::before {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    position: absolute;
+    top: 23%;
+    left: -10px;
+
+    display: inline-block;
+    font-size: 28px;
+    line-height: 48px;
+    font-weight: 700;
+    font-family: $font-basic;
+    color: $btn-gradient;
+    text-align: center;
+    vertical-align: middle;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  &::after {
+    content: url("../img/arrow-down.svg");
+    position: absolute;
+    top: 38px;
+    right: 17px;
+
+    width: 36px;
+    height: 36px;
+
+    cursor: pointer;
+  }
+
+  & p {
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 0.1px;
+    text-align: left;
+
+    margin: 0;
+    max-width: 74%;
+  }
+}
+
+.accordion__btn--five {
+  padding-bottom: 24px;
+}
+
+.accordion__btn--six {
+  padding-top: 38px;
+  padding-bottom: 24px;
+}
+
+.accordion__panel {
+  display: none;
+
+  & p {
+    font-size: 15px;
+    line-height: 21px;
+    opacity: 0.74;
+
+    margin-top: -9px;
+    max-width: 90%;
+    margin-bottom: 33px;
+  }
+}
+
+.accordion__item.accordion__item--active {
+  & .accordion__panel {
+    display: block;
+  }
+
+  & .accordion__btn {
+    &::after {
+      content: url("../img/arrow-up.svg");
+      position: absolute;
+      top: 37px;
+      right: 18px;
+
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+
+@media (max-width: $tablet-width) {
+  .accordion__list {
+    align-items: center;
+    width: 100%;
+
+    counter-reset: myCounter;
+
+    & li {
+      width: 90%;
+    }
+  }
+
+  .accordion__btn {
+    max-width: 100%;
+
+    padding-left: 25px;
+    padding-bottom: 18px;
+    letter-spacing: 0;
+
+    &::before {
+      top: 24px;
+    }
+
+    &::after {
+      top: 40px;
+      right: -20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+
+      max-width: 100%;
+    }
+  }
+
+  .accordion__btn--two {
+    padding-bottom: 24px;
+  }
+
+  .accordion__btn--four {
+    padding-bottom: 24px;
+  }
+
+  .accordion__btn--five {
+    padding-bottom: 16px;
+  }
+
+  .accordion__btn--six {
+    padding-bottom: 16px;
+  }
+
+  .accordion__panel {
+    & p {
+      font-size: 14px;
+      line-height: 22px;
+
+      margin-bottom: 15px;
+      margin-top: 0;
+      max-width: 100%;
+    }
+  }
+
+  .accordion__item.accordion__item--active {
+    & .accordion__btn {
+      &::after {
+        top: 40px;
+        right: -20px;
+      }
+    }
+  }
+}

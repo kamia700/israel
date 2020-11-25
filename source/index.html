@@ -17,30 +17,6 @@
   <meta name="Keywords" content="путешествие, образование, учеба, карьера, израиль">
   <link rel="stylesheet" href="css/style.min.css">
 
-  <script src="https://unpkg.com/imask"></script>
-  <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position:  50% 0;
-      background-image: url("img/Frame1.png");
-    }
-    /* @media (max-width: 1023px ) {
-      HTML {
-        background-image: url("img/Frame2.png");
-      }
-    } */
-    @media (max-width: 767px ) {
-      HTML {
-        background-image: url("img/Frame3.png");
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://yoksel.github.io/pixel-glass-js/styles.css">
-  <script src="https://yoksel.github.io/pixel-glass-js/script.js"></script>
-  <!-- // Pixel Glass -->
-
-
 </head>
 
 <body>
@@ -69,7 +45,7 @@
     </section>
 
     <section class="header__intro intro">
-      <h1 class="intro__title visually-hidden">Израиль</h1>
+      <h2 class="intro__title visually-hidden">Израиль</h2>
       <p>Учёба, путешествие и карьера для еврейской молодёжи</p>
       <button class="intro__scroll" type="button" aria-label="скролл вниз"></button>
     </section>
@@ -82,11 +58,10 @@
           <form class="popup-header__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
             <div class="popup-header__info">
               <label class="visually-hidden" for="name">Имя</label>
-              <input class="popup-header__name" id="name" name="name" type="name" placeholder="имя">
+              <input class="popup-header__name" id="name" name="name" type="text" placeholder="имя">
 
               <label class="visually-hidden" for="tel">Телефон</label>
               <input class="popup-header__tel tel" id="tel" name="tel" type="tel" maxlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон" required>
-
 
               <button class="popup-header__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
               <div class="popup-header__checkbox checkbox">
@@ -114,9 +89,10 @@
         <div class="about__player">
           <a href="#">
             <picture>
-              <!-- <source type="image/webp" srcset="img/about@1x.webp 1x, img/about@2x.webp 2x"> -->
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/about-mobile@1x.webp 1x, img/about-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="img/about@1x.webp 1x, img/about@2x.webp 2x">
               <!-- 1х: 320px; 2x: 640px -->
-              <source media="(max-width: 767px)" width="320" height="224" srcset="img/about-mobile@1x.png 1x, img/about-mobile@2x.png 2x">
+              <source media="(max-width: 767px)" srcset="img/about-mobile@1x.png 1x, img/about-mobile@2x.png 2x">
               <!-- 1х: 870px; 2x: 1756px -->
               <img src="img/about@1x.png" srcset="img/about@2x.jpg 2x" width="870" height="460" alt="заставка для видео">
             </picture>
@@ -133,6 +109,7 @@
     <section class="programs">
       <h2>Программы</h2>
       <section class="programs__tabs tabs">
+        <h2 class="visually-hidden">Описание программ</h2>
         <div class="tabs__list" id="tabs">
           <a href="#tab-1" class="tabs__item tabs__item--basic tabs__item--one" data-tab-name="tab-1"><span>Общие</span></a>
           <a href="#tab-2" class="tabs__item tabs__item--academ tabs__item--active" data-tab-name="tab-2"><span>Академические</span></a>
@@ -198,87 +175,104 @@
     <section class="contact">
       <div class="contact__wrapper">
         <h2>Хочу поехать!</h2>
-        <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
+        <p>Оставьте свой телефон и мы свяжемся&nbsp;с&nbsp;вами, подберём куратора и&nbsp;ответим на все вопросы!</p>
         <form class="contact__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
           <div class="contact__form-block">
-            <label class="contact__form-label visually-hidden" for="tel">Введите телефон</label>
-            <input class="contact__form-input" id="tel" name="tel" type="tel" pattern="\+7\s\d{10}" placeholder="телефон" required>
-            <button class="contact__form-btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+            <label class="contact__form-label visually-hidden" for="telephone">Введите телефон</label>
+            <input class="contact__form-input contact__form-input--tel tel" id="telephone" name="tel" type="tel" maxlength="18" placeholder="телефон" required>
+            <button class="contact__form-btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
         </form>
       </div>
     </section>
 
     <section class="terms">
-      <div class="terms__wrapper">
-        <h2>Как поехать</h2>
-        <p>Чтобы узнать подробнее о программе, свяжитесь с координатором в вашем городе. Вы получите актуальные сведения о доступных программах и городах, в которых можете пройти программу.</p>
-        <p>
-          <strong>Чтобы иметь возможность получить грант на обучение от 4200 до 8400$, вы должны:</strong>
-        </p>
-        <ol>
-          <li>Быть в возрасте от 16 до 30 лет</li>
-          <li>Иметь оконченное среднее образование</li>
-          <li>Иметь документально подтверждённые еврейские корни и пройти консульскую проверку</li>
-          <li>За последние 2 года быть не больше 3х месяцев подряд непрерывно в Израиле.</li>
-        </ol>
-        <p class="terms__ps">Если вы не подходите по этим правилам, вы всё равно можете принять участие в программе «Маса», оплатив её полную стоимость.</p>
+      <div class="terms__block">
+        <div class="terms__wrapper">
+          <h2>Как поехать</h2>
+          <p>Чтобы узнать подробнее о программе, свяжитесь с координатором в вашем городе. Вы получите актуальные сведения о доступных программах и городах, в которых можете пройти программу.</p>
+          <p class="terms__strong">
+            <strong>Чтобы иметь возможность получить грант на обучение от 4200 до 8400$, вы должны:</strong>
+          </p>
+          <ul class="terms__list">
+            <li>Быть в возрасте от 16 до 30 лет</li>
+            <li>Иметь оконченное среднее образование</li>
+            <li>Иметь документально подтверждённые еврейские корни и&nbsp;пройти&nbsp;консульскую проверку</li>
+            <li>За последние 2 года быть не больше 3х месяцев подряд непрерывно&nbsp;в Израиле.</li>
+          </ul>
+          <div class="terms__ps">
+            <p>Если вы не подходите по этим правилам, вы всё равно можете принять участие в программе «Маса», оплатив её полную стоимость.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="extra">
-      <h2>Жизнь в израиле</h2>
-      <p>Помимо учёбы, в рамках программе у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.</p>
-      <ul>
-        <li>
-          <h3>Экскурсии по Израилю и знакомство с его историей</h3>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/img1@1x.webp 1x, img/img1@2x.webp 2x"> -->
-            <!-- 1х: 482px; 2x: 964px -->
-            <img src="img/img1@1x.jpg" srcset="img/img1@2x.jpg 2x" width="482" height="732" alt="Фото мечети Аль-Акса">
-          </picture>
-        </li>
-        <li>
-          <h3>Изучение иврита</h3>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/img2@1x.webp 1x, img/img2@2x.webp 2x"> -->
-            <!-- 1х: 211px; 2x: 422px -->
-            <img src="img/img2@1x.jpg" srcset="img/img2@2x.jpg 2x" width="211" height="318" alt="Изучение иврита">
-          </picture>
-        </li>
-        <li>
-          <h3>Обучение современным навыкам и профессиям</h3>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/img3@1x.webp 1x, img/img3@2x.webp 2x"> -->
-            <!-- 1х: 411px; 2x: 822px -->
-            <img src="img/img3@1x.jpg" srcset="img/img3@2x.jpg 2x" width="411" height="318" alt="Процесс обучения современным навыкам и профессиям">
-          </picture>
-        </li>
-        <li>
-          <h3>Совместные творческие проекты с израильской молодёжью</h3>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/img4@1x.webp 1x, img/img4@2x.webp 2x"> -->
-            <!-- 1х: 411px; 2x: 822px -->
-            <img src="img/img4@1x.jpg" srcset="img/img4@2x.jpg 2x" width="411" height="318" alt="Группа творческого проекта">
-          </picture>
-        </li>
-        <li>
-          <h3>Развитие лидерства</h3>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/img1@1x.webp 1x, img/img1@2x.webp 2x"> -->
-            <!-- 1х: 214px; 2x: 428px -->
-            <img src="img/img3@1x.jpg" srcset="img/img3@2x.jpg 2x" width="214" height="318" alt="Развитие лидерства">
-          </picture>
-        </li>
-      </ul>
+      <h2>Жизнь в&nbsp;Израиле</h2>
+      <p>Помимо&nbsp;учёбы,&nbsp;в&nbsp;рамках&nbsp;программы у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля&nbsp;и&nbsp;его&nbsp;жителей.</p>
+      <div class="extra__slider">
+        <ul class="extra__list slick-slider">
+          <li class="extra__item extra__item--first">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="img/img1@1x.webp 1x, img/img1@2x.webp 2x">
+                <!-- 1х: 482px; 2x: 964px -->
+                <img src="img/img1@1x.png" srcset="img/img1@2x.png 2x" width="482" height="732" alt="Фото мечети Аль-Акса">
+              </picture>
+              <figcaption>Экскурсии по Израилю и&nbsp;знакомство с его историей</figcaption>
+            </figure>
+          </li>
+          <li class="extra__item extra__item--second">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="img/img2@1x.webp 1x, img/img2@2x.webp 2x">
+                <!-- 1х: 211px; 2x: 422px -->
+                <img src="img/img2@1x.png" srcset="img/img2@2x.png 2x" width="211" height="318" alt="Изучение иврита">
+              </picture>
+              <figcaption>Изучение иврита</figcaption>
+            </figure>
+          </li>
+          <li class="extra__item extra__item--third">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="img/img3@1x.webp 1x, img/img3@2x.webp 2x">
+                <!-- 1х: 411px; 2x: 822px -->
+                <img src="img/img3@1x.png" srcset="img/img3@2x.png 2x" width="411" height="318" alt="Процесс обучения современным навыкам и профессиям">
+              </picture>
+              <figcaption>Обучение современным навыкам и профессиям</figcaption>
+            </figure>
+          </li>
+          <li class="extra__item extra__item--fourth">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="img/img4@1x.webp 1x, img/img4@2x.webp 2x">
+                <!-- 1х: 411px; 2x: 822px -->
+                <img src="img/img4@1x.png" srcset="img/img4@2x.png 2x" width="411" height="318" alt="Группа творческого проекта">
+              </picture>
+              <figcaption>Совместные творческие проекты с&nbsp;израильской молодёжью</figcaption>
+            </figure>
+          </li>
+          <li class="extra__item extra__item--fifth">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="img/img5@1x.webp 1x, img/img5@2x.webp 2x">
+                <!-- 1х: 214px; 2x: 428px -->
+                <img src="img/img5@1x.png" srcset="img/img5@2x.png 2x" width="214" height="318" alt="Развитие лидерства">
+              </picture>
+              <figcaption>Развитие лидерства</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+
     </section>
 
     <section class="photo">
       <div class="photo__block">
         <h2>#masaisrael</h2>
-        <p>Познакомьтесь с программой от первого лица! Многие участники ведут блоги и фотодневники о жизни, учёбе и путешествиях в Израиле.</p>
-        <a href="">смотреть фото
-          <svg class="instagram__btn" width="24" height="24">
+        <p>Познакомьтесь с программой от&nbsp;первого лица! Многие участники ведут блоги и фотодневники о&nbsp;жизни,&nbsp;учёбе и путешествиях в&nbsp;Израиле.</p>
+        <a class="photo__btn btn" href="">смотреть фото
+          <svg class="photo__svg insta-btn" width="24" height="24">
             <use xlink:href="#icon-instagram"></use>
           </svg>
         </a>
@@ -288,111 +282,389 @@
     <section class="question">
       <div class="question__accordion accordion">
         <h2>Частые вопросы</h2>
-        <ol class="accordion__list">
+        <ul class="accordion__list">
           <li class="accordion__item">
-            <button class="accordion__btn">Кто организатор? Какие сроки у программы?</button>
+            <div class="accordion__btn accordion__btn--one">
+              <p>Кто организатор? Какие сроки у&nbsp;программы?</p>
+            </div>
             <div class="accordion__panel">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </li>
           <li class="accordion__item">
-            <button class="accordion__btn">Что такое грант на обучение?</button>
+            <div class="accordion__btn accordion__btn--two">
+              <p>Что такое грант на обучение?</p>
+            </div>
             <div class="accordion__panel">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </li>
-          <li class="accordion__item">
-            <button class="accordion__btn">Как определяется стоимость программы?</button>
+          <li class="accordion__item accordion__item--active">
+            <div class="accordion__btn accordion__btn--three">
+              <p>Как определяется стоимость программы?</p>
+            </div>
             <div class="accordion__panel">
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
             </div>
           </li>
           <li class="accordion__item">
-            <button class="accordion__btn">Что такое грант на обучение?</button>
+            <div class="accordion__btn accordion__btn--four">
+              <p>Что такое грант на обучение?</p>
+            </div>
             <div class="accordion__panel">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </li>
           <li class="accordion__item">
-            <button class="accordion__btn">Признаётся ли учеба в рамках проекта для дальнейшего обучения?</button>
+            <div class="accordion__btn accordion__btn--five">
+              <p>Признаётся ли учеба в рамках проекта для дальнейшего обучения?</p>
+            </div>
             <div class="accordion__panel">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </li>
           <li class="accordion__item">
-            <button class="accordion__btn">Как выглдядит полный процесс регистрации на программу «Маса»?</button>
+            <div class="accordion__btn accordion__btn--six">
+              <p>Как выглдядит полный процесс&nbsp;регистрации на&nbsp;программу «Маса»?</p>
+            </div>
             <div class="accordion__panel">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </li>
-        </ol>
+        </ul>
       </div>
+      <div class="question__photo"></div>
     </section>
 
     <section class="reviews">
-      <div class="reviews__wrapper container">
+      <div class="reviews__wrapper">
         <h2>Отзывы</h2>
-        <div class="reviews__block slider">
-          <div class="slider__photo">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x"> -->
-              <!-- 1х: 364px; 2x: 728px -->
-              <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
-            </picture>
-          </div>
-
-          <div class="slider__content">
-            <blockquote class="review__name">
-              <cite class="review__author">Ольга Михайлова</cite>
-              <p class="reviews__program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
-              <p class="review__text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега. С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
-            </blockquote>
-            <a class="reviews__further" href="#" aria-label="читать полный текст отзыва">Читать подробнее</a>
-
-            <div class="slider__nav">
-              <div class="slider__number">3 / 6</div>
-              <div class="slider__arrows">
-                <button type="button" class="prev arrows">&larr;</button>
-                <button type="button" class="next arrows">&rarr;</button>
+          <ul class="reviews__slider-list slider-reviews">
+            <li class="slider-reviews__item">
+              <div class="reviews__slider-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x">
+                  <!-- 1х: 364px; 2x: 728px -->
+                  <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
+                </picture>
               </div>
-              <ul class="slider__social social">
-                <li>
-                  <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                    <svg class="social__fb" width="24" height="24">
-                      <use xlink:href="#icon-facebook"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                    <svg class="social__twitter" width="24" height="24">
-                      <use xlink:href="#icon-twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                    <svg class="social__inst" width="24" height="24">
-                      <use xlink:href="#icon-instagram"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+              <div class="reviews__slider-content">
+                <blockquote class="reviews__slider-name">
+                  <cite class="reviews__slider-author">Ольга Михайлова</cite>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+                  <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+                </blockquote>
+                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
+
+                <div class="reviews__slider-nav">
+                  <div class="reviews__slider-page">
+                    <div class="reviews__slider-number">1 / 6</div>
+                    <div class="reviews__slider-arrows">
+                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+                    </div>
+                  </div>
+                  <ul class="reviews__slider-social social">
+                    <li>
+                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                        <svg class="social__fb" width="24" height="24">
+                          <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                        <svg class="social__twitter" width="24" height="24">
+                          <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                        <svg class="social__inst" width="24" height="24">
+                          <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="slider-reviews__item">
+              <div class="reviews__slider-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x">
+                  <!-- 1х: 364px; 2x: 728px -->
+                  <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
+                </picture>
+              </div>
+
+              <div class="reviews__slider-content">
+                <blockquote class="reviews__slider-name">
+                  <cite class="reviews__slider-author">Ольга Михайлова</cite>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+                  <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+                </blockquote>
+                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
+
+                <div class="reviews__slider-nav">
+                  <div class="reviews__slider-page">
+                    <div class="reviews__slider-number">2 / 6</div>
+                    <div class="reviews__slider-arrows">
+                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+                    </div>
+                  </div>
+                  <ul class="reviews__slider-social social">
+                    <li>
+                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                        <svg class="social__fb" width="24" height="24">
+                          <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                        <svg class="social__twitter" width="24" height="24">
+                          <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                        <svg class="social__inst" width="24" height="24">
+                          <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="slider-reviews__item">
+              <div class="reviews__slider-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x">
+                  <!-- 1х: 364px; 2x: 728px -->
+                  <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
+                </picture>
+              </div>
+
+              <div class="reviews__slider-content">
+                <blockquote class="reviews__slider-name">
+                  <cite class="reviews__slider-author">Ольга Михайлова</cite>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+                  <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+                </blockquote>
+                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
+
+                <div class="reviews__slider-nav">
+                  <div class="reviews__slider-page">
+                    <div class="reviews__slider-number">3 / 6</div>
+                    <div class="reviews__slider-arrows">
+                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+                    </div>
+                  </div>
+                  <ul class="reviews__slider-social social">
+                    <li>
+                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                        <svg class="social__fb" width="24" height="24">
+                          <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                        <svg class="social__twitter" width="24" height="24">
+                          <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                        <svg class="social__inst" width="24" height="24">
+                          <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="slider-reviews__item">
+              <div class="reviews__slider-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x">
+                  <!-- 1х: 364px; 2x: 728px -->
+                  <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
+                </picture>
+              </div>
+
+              <div class="reviews__slider-content">
+                <blockquote class="reviews__slider-name">
+                  <cite class="reviews__slider-author">Ольга Михайлова</cite>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+                  <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+                </blockquote>
+                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
+
+                <div class="reviews__slider-nav">
+                  <div class="reviews__slider-page">
+                    <div class="reviews__slider-number">4 / 6</div>
+                    <div class="reviews__slider-arrows">
+                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+                    </div>
+                  </div>
+                  <ul class="reviews__slider-social social">
+                    <li>
+                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                        <svg class="social__fb" width="24" height="24">
+                          <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                        <svg class="social__twitter" width="24" height="24">
+                          <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                        <svg class="social__inst" width="24" height="24">
+                          <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="slider-reviews__item">
+              <div class="reviews__slider-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x">
+                  <!-- 1х: 364px; 2x: 728px -->
+                  <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
+                </picture>
+              </div>
+
+              <div class="reviews__slider-content">
+                <blockquote class="reviews__slider-name">
+                  <cite class="reviews__slider-author">Ольга Михайлова</cite>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+                  <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+                </blockquote>
+                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
+
+                <div class="reviews__slider-nav">
+                  <div class="reviews__slider-page">
+                    <div class="reviews__slider-number">5 / 6</div>
+                    <div class="reviews__slider-arrows">
+                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+                    </div>
+                  </div>
+                  <ul class="reviews__slider-social social">
+                    <li>
+                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                        <svg class="social__fb" width="24" height="24">
+                          <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                        <svg class="social__twitter" width="24" height="24">
+                          <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                        <svg class="social__inst" width="24" height="24">
+                          <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="slider-reviews__item">
+              <div class="reviews__slider-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/michael@1x.webp 1x, img/michael@2x.webp 2x">
+                  <!-- 1х: 364px; 2x: 728px -->
+                  <img src="img/michael@1x.png" srcset="img/michael@2x.png 2x" width="364" height="480" alt="аватар пользователя">
+                </picture>
+              </div>
+
+              <div class="reviews__slider-content">
+                <blockquote class="reviews__slider-name">
+                  <cite class="reviews__slider-author">Ольга Михайлова</cite>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+                  <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+                </blockquote>
+                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
+
+                <div class="reviews__slider-nav">
+                  <div class="reviews__slider-page">
+                    <div class="reviews__slider-number">6 / 6</div>
+                    <div class="reviews__slider-arrows">
+                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+                    </div>
+                  </div>
+                  <ul class="reviews__slider-social social">
+                    <li>
+                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                        <svg class="social__fb" width="24" height="24">
+                          <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                        <svg class="social__twitter" width="24" height="24">
+                          <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                        <svg class="social__inst" width="24" height="24">
+                          <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
       </div>
     </section>
 
     <section class="details">
-      <div class="details__info">
-        <div>
+      <div class="details__wrapper">
+        <div class="details__info">
           <h2>Узнать подробности</h2>
-          <p>Ваш город:<a href="#" aria-label="город Новосибирск">новосибирск</a></p>
+          <p class="details__city">Ваш город:<a href="#" class="details__city-link" aria-label="город Новосибирск">новосибирск</a></p>
           <div class="details__tutor">
             <div class="details__tutor-photo">
               <picture>
-                <!-- <source type="image/webp" srcset="img/daniil@1x.webp 1x, img/daniil@2x.webp 2x"> -->
+                <source type="image/webp" srcset="img/daniil@1x.webp 1x, img/daniil@2x.webp 2x">
                 <!-- 1х: 112px; 2x: 224px -->
                 <img src="img/daniil@1x.jpg" srcset="img/daniil@2x.jpg 2x" width="112" height="112" alt="аватар пользователя">
               </picture>
@@ -428,14 +700,16 @@
               </li>
             </ul>
           </div>
-          <p>Куратор является опытным специалистом агентства Сохнут и знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте подробнее о программах и выберите свою !</p>
+          <p class="details__text">Куратор является опытным специалистом агентства&nbsp;Сохнут и&nbsp;знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте&nbsp;подробнее о&nbsp;программах&nbsp;и выберите свою !</p>
         </div>
-        <div>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/map@1x.webp 1x, img/map@2x.webp 2x"> -->
-            <!-- 1х: 702px; 2x: 1404px -->
-            <img src="img/map@1x.png" srcset="img/map@2x.png 2x" width="702" height="448" alt="адресс: Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»">
-          </picture>
+        <div class="details__photo">
+          <div class="details__photo-wrapper">
+            <picture>
+              <source type="image/webp" srcset="img/map@1x.webp 1x, img/map@2x.webp 2x">
+              <!-- 1х: 702px; 2x: 1404px -->
+              <img src="img/map@1x.png" srcset="img/map@2x.png 2x" width="702" height="448" alt="адресс: Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»">
+            </picture>
+          </div>
         </div>
       </div>
       <div class="details__feedback feedback">
@@ -445,12 +719,13 @@
         </div>
         <form class="feedback__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
           <div class="feedback__form-block">
-            <label class="visually-hidden" for="name">Имя</label>
-            <input id="name" name="name" type="name" placeholder="имя">
+            <label class="visually-hidden" for="feedback__name">Имя</label>
+            <input class="feedback__name" id="feedback__name" name="name" type="text" placeholder="имя">
 
-            <label class="visually-hidden" for="tel">Телефон</label>
-            <input id="tel" name="tel" type="tel" pattern="\+7\(\d{3}\)\d{3}\d{2}\d{2}" placeholder="телефон" required>
-            <button class="feedback__btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+            <label class="visually-hidden" for="phone">Телефон</label>
+            <input class="feedback__tel tel" id="phone" name="tel" type="tel" maxlength="18" placeholder="+7 (923) 41" required>
+
+            <button class="feedback__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
         </form>
       </div>
@@ -459,12 +734,12 @@
 
   <footer class="footer">
     <div class="footer__logo">
-      <img src="img/logo-footer.svg" alt="Логотип">
+      <a href="#"><img src="img/logo-footer.svg" width="85" height="27" alt="Логотип"></a>
     </div>
     <div class="footer__copyright">
       <p>Copyright someDesignCompany ©2019</p>
     </div>
-    <ul>
+    <ul class="footer__social">
       <li>
         <a class="footer__button" href="http://facebook.com/" aria-label="Фейсбук">
           <svg class="footer__fb" width="24" height="24">
@@ -513,9 +788,8 @@
     </section>
   </template>
 
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/vendor.js"></script>
-<!-- <script src="https://unpkg.com/imask"></script> -->
-
 <script src="js/main.js"></script>
 </body>
 </html>

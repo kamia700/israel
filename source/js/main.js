@@ -1,5 +1,3 @@
-/* eslint-disable */
-/*stylelint-disable*/
 'use strict';
 
 (function () {
@@ -139,11 +137,10 @@
   var popupTel = headerForm.querySelector('.popup-header__tel');
 
   var isStorageSupport = true;
-  var storage = '';
 
   try {
-    var storageName = localStorage.getItem('popupName');
-    var storageTel = localStorage.getItem('popupTel');
+    localStorage.getItem('popupName');
+    localStorage.getItem('popupTel');
   } catch (err) {
     isStorageSupport = false;
   }
@@ -202,27 +199,17 @@
     element.addEventListener('change', changeBorderHandler);
   });
 
-
-  // маска для ввода номера
-  var elements = document.getElementsByClassName('tel');
-  for (var i = 0; i < elements.length; i++) {
-    new IMask(elements[i], {
-      mask: '+{7} (000) 000 00 00'
-    });
-  }
-
-
   // tabs
-  var tab = function () {
+  var setTab = function () {
     var tabNav = document.querySelectorAll('.tabs__item');
     var tabContent = document.querySelectorAll('.tabs__inset');
     var tabName;
 
     tabNav.forEach(function (item) {
-      item.addEventListener('click', selectTabNav);
+      item.addEventListener('click', SelectTabNav);
     });
 
-    function selectTabNav() {
+    function SelectTabNav() {
       tabNav.forEach(function (item) {
         item.classList.remove('tabs__item--active');
       });
@@ -243,6 +230,23 @@
     }
   };
 
-  tab();
+  setTab();
+
+  // accordion
+  document.querySelectorAll('.accordion__btn').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var parent = item.parentNode;
+
+      if (parent.classList.contains('accordion__item--active')) {
+        parent.classList.remove('accordion__item--active');
+      } else {
+        document.querySelectorAll('.accordion__item').forEach(function (child) {
+          child.classList.remove('accordion__item--active');
+        });
+
+        parent.classList.toggle('accordion__item--active');
+      }
+    });
+  });
 
 }());

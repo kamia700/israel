@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width: $width-mobile) {
+@media (max-width: $mobile-width) {
   .error {
     & p {
       font-size: 30px;

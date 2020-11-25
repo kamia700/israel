@@ -5,18 +5,18 @@
   max-width: 1366px;
   margin: 0 auto;
 
-  background-image: url("../img/watercolor_bg@1x.png");
-  background-position: center 150px;
+  background-image: url("../img/watercolor_bg@1x.jpg");
+  background-position: center 178px;
   background-repeat: no-repeat;
   background-size: 100%;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/watercolor_bg@2x.png");
+    background-image: url("../img/watercolor_bg@2x.jpg");
   }
 
   & h2 {
     @include title;
-    margin-top: -12px;
+    margin-top: 20px;
     margin-bottom: 7px;
   }
 
@@ -101,13 +101,13 @@
   }
 }
 
-@media (max-width: $width-mobile) {
+@media (max-width: $mobile-width) {
   .about {
-    background-image: url("../img/watercolor_bg-mobile@1x.png");
+    background-image: url("../img/watercolor_bg-mobile@1x.jpg");
     background-position: center 240px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/watercolor_bg-mobile@2x.png");
+      background-image: url("../img/watercolor_bg-mobile@2x.jpg");
     }
 
     & h2 {
@@ -137,11 +137,15 @@
     padding-left: 0;
     padding-top: 33px;
 
-    img {
+    & a {
+      display: block;
+    }
+
+    & img {
       width: 100%;
     }
 
-    button {
+    & button {
       width: 53.33px;
       height: 53.33px;
 

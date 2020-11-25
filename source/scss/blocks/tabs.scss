@@ -1,8 +1,8 @@
 .tabs__list {
   display: flex;
   flex-direction: column;
-  min-width: 228px;
 
+  min-width: 228px;
   min-height: 324px;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .tabs__content {
-  display: flex;
-
   @include reset;
+
+  display: flex;
   width: 55%;
 }
 
@@ -32,6 +32,11 @@
   padding-left: 70px;
   padding-top: 20px;
   cursor: pointer;
+  color: $text;
+
+  & span {
+    opacity: 0.87;
+  }
 
   &:not(:first-child) {
     padding-top: 29px;
@@ -47,6 +52,7 @@
     padding-top: 25px;
     padding-bottom: 25px;
   }
+
   text-transform: uppercase;
   color: $white;
 }
@@ -120,6 +126,7 @@
   background-image: url("../img/5_b-active.svg");
 }
 
+
 .tabs__item:not(.tabs__item--active):hover.tabs__item--basic::after {
   background-image: url("../img/1_b-hover.svg");
 }
@@ -142,12 +149,22 @@
 
 .tabs__item:not(.tabs__item--active):hover span {
   color: $btn-gradient;
+  opacity: 1;
   background: linear-gradient(108.42deg, $btn-gradient 20.46%, $btn-yellow 65.31%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: $width-mobile) {
+.tabs__item--active:hover span {
+  color: $btn-gradient;
+  opacity: 1;
+  background: linear-gradient(108.42deg, $black-gradient 20.46%, $white 65.31%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@media (max-width: $mobile-width) {
   .tabs__list {
     flex-direction: row;
 

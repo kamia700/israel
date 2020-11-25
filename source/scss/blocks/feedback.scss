@@ -1,0 +1,151 @@
+.feedback {
+  display: flex;
+  flex-wrap: nowrap;
+  z-index: 1;
+
+  margin-bottom: 59px;
+}
+
+.feedback__info {
+  width: 28%;
+}
+
+.feedback__form {
+  width: 70%;
+}
+
+.feedback__title {
+  font-size: 17px;
+  line-height: 25px;
+  opacity: 0.87;
+
+  margin-bottom: 12px;
+}
+
+.feedback__text {
+  font-size: 13px;
+  line-height: 19px;
+  opacity: 0.5;
+  margin-top: 0;
+}
+
+.feedback__form-block {
+  position: relative;
+
+  padding-left: 27px;
+  padding-top: 10px;
+
+  & input {
+    font-family: $font-basic;
+    width: 250px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    font-variant: small-caps;
+
+    padding: 18px 40px;
+    margin-bottom: 20px;
+
+    border: 2px solid $border-input;
+    border-radius: 80px;
+    outline: none;
+
+    margin-right: 20px;
+    opacity: 0.87;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  & .feedback__btn {
+    width: 216px;
+    letter-spacing: 1px;
+  }
+
+  & .feedback__tel {
+    background-image: url("../img/input-bg@1x.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+
+    opacity: 0.87;
+
+    border: 2px solid $btn-gradient;
+
+    & :focus {
+      background-image: url("../img/input-bg@1x.svg");
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+
+    &::placeholder {
+      width: 250px;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      font-variant: small-caps;
+      font-family: $font-basic;
+    }
+  }
+}
+
+
+@media (max-width: $tablet-width) {
+  .feedback__info {
+    width: 50%;
+  }
+
+  .feedback__form {
+    width: 50%;
+  }
+
+  .feedback__form-block {
+    & .feedback__btn {
+      width: 250px;
+    }
+  }
+}
+
+
+@media (max-width: $mobile-width) {
+  .feedback {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 62px;
+  }
+
+  .feedback__info {
+    width: 100%;
+  }
+
+  .feedback__title {
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-bottom: 15px;
+  }
+
+  .feedback__form {
+    width: 100%;
+  }
+
+  .feedback__form-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 0;
+
+    & .feedback__btn {
+      width: 264px;
+      margin-top: 17px;
+    }
+
+    & input {
+      margin-right: 0;
+      margin-bottom: 6px;
+      width: 288px;
+    }
+  }
+}

@@ -1,0 +1,279 @@
+.terms {
+  max-width: 1366px;
+  margin: 0 auto;
+  min-height: 1208px;
+
+  background-image: url("../img/watercolor_bg2@1x.jpg");
+  background-position: 100% -35px;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/watercolor_bg2@2x.jpg");
+  }
+}
+
+.terms__block {
+  display: flex;
+  justify-content: flex-end;
+
+  padding-bottom: 50px;
+
+  background-image: url("../img/terms-bg@1x.png"), url("../img/stamp@1x.png");
+  background-position: 13px 165px, right 370px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 42.5%, 215px 254px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/terms-bg@2x.png"), url("../img/stamp@2x.png");
+  }
+}
+
+.terms__wrapper {
+  max-width: 552px;
+  margin-top: 162px;
+  margin-right: 115px;
+
+  & h2 {
+    @include title;
+    margin-bottom: 24px;
+    letter-spacing: -0.7px;
+  }
+
+  & p {
+    font-size: 15px;
+    line-height: 26px;
+    max-width: 87%;
+
+    margin-bottom: 30px;
+  }
+
+  & .terms__strong {
+    font-size: 17px;
+    line-height: 29px;
+    font-weight: 500;
+    max-width: 81%;
+    margin-bottom: 20px;
+
+    opacity: 1;
+  }
+}
+
+.terms__list {
+  @include reset;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  counter-reset: myCounter;
+
+  min-height: 272px;
+  margin-bottom: 25px;
+
+  &::after {
+    content: url("../img/dotted-line.svg");
+    position: absolute;
+    top: 45px;
+    left: 2px;
+
+    width: 2px;
+    height: 193px;
+
+    z-index: 0;
+  }
+
+  & li {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 15px;
+    line-height: 21px;
+
+    padding-left: 44px;
+    padding-top: 19px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    vertical-align: middle;
+
+    min-height: 68px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &::before {
+      counter-increment: myCounter;
+      content: counter(myCounter);
+      position: absolute;
+      top: 25%;
+      left: -15px;
+
+      display: inline-block;
+      font-size: 17px;
+      line-height: 29px;
+      font-weight: 700;
+      color: $btn-gradient;
+      text-align: center;
+      vertical-align: middle;
+
+      border-radius: 50%;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      background-color: $white;
+      width: 36px;
+      height: 36px;
+      padding-top: 2px;
+      z-index: 1;
+    }
+
+    &:first-child::before {
+      top: 10%;
+    }
+
+    &:last-child::before {
+      top: 20%;
+    }
+  }
+}
+
+.terms__ps {
+  padding-left: 13px;
+
+  border-left: 4px solid $btn-gradient;
+
+  & p {
+    max-width: 100%;
+    line-height: 21px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: $breakpoint) {
+  .terms {
+    min-height: 1120px;
+  }
+
+  .terms__wrapper {
+    margin-top: 100px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .terms {
+    background-image: none;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: none;
+    }
+  }
+
+  .terms__block {
+    justify-content: center;
+    background-image: none, url("../img/stamp-mobile@1x.png");
+    background-position: right 355px;
+    background-size: 0, 215px 199px;
+
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: none, url("../img/stamp-mobile@2x.png");
+    }
+  }
+
+  .terms__wrapper {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    & h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .terms {
+    min-height: 730px;
+  }
+
+  .terms__block {
+    padding-bottom: 28px;
+  }
+
+  .terms__wrapper {
+    margin-top: 52px;
+
+    & h2 {
+      font-size: 32px;
+      line-height: 39px;
+    }
+
+    & p {
+      font-size: 14px;
+      line-height: 22px;
+      max-width: 100%;
+
+      margin-bottom: 24px;
+    }
+
+    & .terms__strong {
+      font-size: 16px;
+      line-height: 26px;
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+
+  .terms__list {
+    min-height: 327px;
+    margin-bottom: 4px;
+
+    &::after {
+      content: url("../img/dotted-line-mobile.svg");
+      top: 37px;
+      left: 9px;
+
+      width: 1px;
+      height: 241px;
+
+      z-index: 0;
+    }
+
+    & li {
+      font-size: 14px;
+      line-height: 22px;
+      padding-right: 0;
+
+      &:first-child {
+        padding-bottom: 30px;
+      }
+
+      &:last-child {
+        padding-top: 5px;
+      }
+
+      &::before {
+        top: 31%;
+        left: -8px;
+      }
+
+      &:first-child::before {
+        top: 0;
+      }
+    }
+  }
+
+  .terms__ps {
+    margin-left: -5px;
+    padding-left: 10px;
+
+    & p {
+      margin-top: 0;
+    }
+  }
+}

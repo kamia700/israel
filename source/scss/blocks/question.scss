@@ -1,0 +1,88 @@
+.question {
+  max-width: 1366px;
+  min-height: 970px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  background-image: url("../img/bag@1x.png"), url("../img/watercolor_bg5@1x.jpg");
+  background-position: left 97.5%, center 57px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 155px 170px, cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bag@2x.png"), url("../img/watercolor_bg5@2x.jpg");
+  }
+}
+
+.question__photo {
+  background-image: url("../img/brooke@1x.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 94%;
+  width: 50%;
+  margin-top: 137px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/brooke@2x.jpg");
+  }
+}
+
+.question__accordion {
+  width: 50%;
+
+  padding-left: 8%;
+  margin-top: 103px;
+  margin-bottom: 146px;
+
+  & h2 {
+    @include title;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .question {
+    min-height: auto;
+
+    background-image: url("../img/bag@1x.png"), none;
+    background-position: -5px 90%, 0;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 155px 170px, auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bag@2x.png"), none;
+    }
+  }
+
+  .question__photo {
+    background-image: none;
+    display: none;
+    width: 0;
+  }
+
+  .question__accordion {
+    width: 100%;
+
+    padding-left: 0;
+    margin-top: 11px;
+    margin-bottom: 0;
+
+    & h2 {
+      font-size: 32px;
+      line-height: 39px;
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .question {
+    background-position: -7px 91%, 0;
+  }
+}

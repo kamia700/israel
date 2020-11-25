@@ -3,16 +3,17 @@
   display: flex;
   flex-direction: column;
   max-width: 1366px;
-  min-height: 906px;
+  min-height: 875px;
   margin: 0 auto;
 
-  background-image: url("../img/bg@1x.png");
+  background-color: $text;
+  background-image: url("../img/bg@1x.jpg");
   background-position: top;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/bg@2x.png");
+    background-image: url("../img/bg@2x.jpg");
   }
 }
 
@@ -45,9 +46,9 @@
 }
 
 
-@media (max-width: $width-mobile) {
+@media (max-width: $mobile-width) {
   .header {
-    background-image: url("../img/bg-mobile@1x.png");
+    background-image: url("../img/bg-mobile@1x.jpg");
     background-position: center 31px;
     background-size: 100% 100%;
 
@@ -55,12 +56,13 @@
     height: 100%;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/bg-mobile@2x.png");
+      background-image: url("../img/bg-mobile@2x.jpg");
     }
-
 
     & .header__block {
       padding: 0;
+
+      background-image: linear-gradient($white 50%, transparent 50%);
     }
   }
 

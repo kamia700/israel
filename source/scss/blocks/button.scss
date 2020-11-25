@@ -7,10 +7,12 @@
 
   font-weight: 500;
   font-size: 17px;
+  line-height: 20px;
   text-align: center;
   font-variant: small-caps;
   color: $white;
   text-shadow: 0 1px 4px $btn-shadow-012;
+  cursor: pointer;
 
   &:hover {
     background: linear-gradient(109.15deg, $btn-gradient -50.3%, $btn-yellow 63.1%);
