@@ -24,6 +24,8 @@
   box-shadow: 0 14px 28px $btn-shadow-025, 0 10px 10px $btn-shadow-012;
   opacity: 1;
 
+  margin-top: 30px;
+
   &::before {
     content: "";
     position: absolute;
@@ -53,9 +55,12 @@
   & h2 {
     @include title;
     font-size: 28px;
+    line-height: 34px;
     margin: 0;
     margin-bottom: 15px;
     text-align: center;
+    text-transform: none;
+    letter-spacing: -0.02em;
   }
 
   & p {
@@ -72,7 +77,7 @@
   }
 }
 
-.close {
+.success__close {
   position: absolute;
   right: 32px;
   top: 32px;
@@ -101,6 +106,8 @@
     box-shadow: none;
     opacity: 1;
 
+    margin-top: 0;
+
     &::before {
       top: 200px;
     }
@@ -118,5 +125,21 @@
       font-size: 14px;
       line-height: 22px;
     }
+  }
+
+  .success__close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    width: 18px;
+    height: 17px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url("../img/close.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
   }
 }

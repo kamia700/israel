@@ -1,0 +1,30 @@
+.social {
+  @include reset;
+
+  & li {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 12px;
+    padding-left: 2px;
+  }
+
+  & a {
+    display: block;
+    opacity: 0.16;
+    outline: none;
+
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:focus {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

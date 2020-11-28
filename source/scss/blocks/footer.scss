@@ -7,42 +7,29 @@
   margin: 0 auto;
 
   border-top: 2px solid $border-input;
+  position: relative;
+  z-index: 3;
+
+  & .footer__social {
+    display: flex;
+    justify-content: space-between;
+
+    min-width: 122px;
+
+    margin-right: 105px;
+    margin-top: 25px;
+  }
 }
 
 
 .footer__social {
-  @include reset;
-  display: flex;
-  justify-content: space-between;
-
-  min-width: 112px;
-
-  margin-right: 7%;
-  margin-top: 25px;
-
   & li {
     margin-right: 20px;
   }
 
   & a {
-    display: block;
-
     width: 24px;
     height: 24px;
-
-    opacity: 0.16;
-
-    &:hover {
-      opacity: 0.5;
-    }
-
-    &:focus {
-      opacity: 0.5;
-    }
-
-    &:active {
-      opacity: 0.3;
-    }
   }
 }
 
@@ -60,29 +47,19 @@
 .footer__logo {
   margin-top: 22px;
   margin-left: 8%;
-
-
-  & a {
-    outline: none;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    &:focus {
-      opacity: 0.8;
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
-  }
 }
 
 @media (max-width: $mobile-width) {
   .footer {
     flex-direction: column;
     align-items: center;
+
+    &  .footer__social {
+      min-width: 140px;
+      margin-right: 10px;
+      margin-top: 15px;
+      margin-bottom: 32px;
+    }
   }
 
   .footer__logo {
@@ -106,24 +83,6 @@
   }
 
   .footer__social {
-    min-width: 136px;
-
-    margin-right: 0;
-    margin-top: 15px;
-    margin-bottom: 32px;
-    margin-left: 11px;
-
-    & li {
-      margin-right: 20px;
-    }
-
-    & a {
-      display: block;
-
-      width: 32px;
-      height: 32px;
-    }
-
     & svg {
       width: 32px;
       height: 32px;

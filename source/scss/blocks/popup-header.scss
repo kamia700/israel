@@ -11,6 +11,11 @@
   background: $white;
   box-shadow: 0 14px 28px $btn-shadow-025, 0 10px 10px $btn-shadow-012;
   opacity: 1;
+  margin: auto;
+  margin-top: 4px;
+
+  height: 521px;
+  border-radius: 10px;
 }
 
 .popup-header__block {
@@ -18,7 +23,7 @@
   flex-direction: column;
 
   max-width: 359px;
-  margin-top: 56px;
+  margin-top: 47px;
   margin-bottom: 40px;
   margin-left: 48px;
 
@@ -26,58 +31,17 @@
     @include title;
     font-size: 28px;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    text-transform: none;
+    letter-spacing: -0.02em;
   }
 
   & p {
     font-size: 15px;
-    line-height: 25.5px;
+    line-height: 26px;
     margin-top: 0;
     margin-bottom: 32px;
-    max-width: 288px;
-  }
-}
-
-.popup-header__info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  & input {
-    position: relative;
-    font-style: normal;
-    font-family: $font-basic;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 20px;
-    font-variant: small-caps;
-    color: $text;
-
-    margin-bottom: 8px;
-    padding: 20px 40px;
-
-    border-radius: 80px;
-    outline: none;
-    border: 2px solid transparent;
-    border-color: $border-input;
-
-    box-sizing: border-box;
-    width: 288px;
-
-    &:focus {
-      position: relative;
-      border-color: $btn-gradient;
-    }
-  }
-
-  & .popup-header__btn {
-    width: 265px;
-
-    min-height: 59px;
-    align-self: center;
-
-    margin-bottom: 15px;
-    margin-top: 24px;
+    max-width: 360px;
   }
 }
 
@@ -97,25 +61,20 @@
   background-color: transparent;
 }
 
-.popup-header__tel {
-  &::placeholder {
-    width: 250px;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 20px;
-    font-variant: small-caps;
-    font-family: $font-basic;
-  }
+.popup-header__close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
 
-  &:focus {
-    background-image: url("../img/input-bg@1x.svg");
-    background-repeat: no-repeat;
-    background-position: 0;
-  }
+  width: 18px;
+  height: 17px;
 
-  &:focus::placeholder {
-    color: transparent;
-  }
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("../img/close.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
 }
 
 @media (max-width: $mobile-width) {
@@ -132,23 +91,29 @@
     background: $white;
     box-shadow: none;
     opacity: 1;
+    margin-top: 0;
+    border-radius: 0;
   }
 
   .popup-header__block {
     max-width: 100%;
-    margin: auto 17px;
+    margin-top: 169px;
+    margin-left: 17px;
+    margin-right: 17px;
     text-align: center;
     align-items: center;
 
     & h2 {
-      @include title;
       font-size: 24px;
       line-height: 29px;
+      text-decoration: none;
+      margin-bottom: 17px;
     }
 
     & p {
       font-size: 14px;
       line-height: 22px;
+      max-width: 285px;
     }
   }
 
@@ -161,29 +126,29 @@
     width: 100%;
   }
 
-  .popup-header__info {
-    display: flex;
-    flex-direction: column;
+  .popup-header__form {
 
-    & input {
-      font-variant: small-caps;
-      font-weight: 500;
-      margin-bottom: 8px;
-      padding: 20px 40px;
-
-      border-radius: 80px;
-      border: 2px solid $border-input;
-      box-sizing: border-box;
-    }
-
-    & .popup-header__btn {
+    & .form__btn {
       width: 265px;
-
-      min-height: 59px;
-      align-self: center;
 
       margin-bottom: 15px;
       margin-top: 24px;
     }
+  }
+
+  .popup-header__close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    width: 18px;
+    height: 17px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url("../img/close.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
   }
 }
