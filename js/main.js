@@ -1,43 +1,57 @@
 'use strict';
 
 (function () {
-  var modal = document.querySelector('.popup-header');
-  var close = document.querySelector('.close');
-  var open = document.querySelector('.open-modal');
-  var inputFocus = document.querySelector('.popup-header__name');
 
-  var PopupEscPressHandler = function (evt) {
-    if (evt.key === 'Escape') {
-      evt.preventDefault();
+  var setPopup = function () {
+    var modal = document.querySelector('.popup-header');
+    var close = document.querySelector('.close');
+    var open = document.querySelector('.open-modal');
+    var inputFocus = document.querySelector('.form__name--header-popup');
+    var popupBtn = document.querySelector('.form__btn--header-popup');
+
+    var popupEscPressHandler = function (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        closeModal();
+      }
+    };
+
+    var openModal = function () {
+      modal.classList.remove('hidden');
+      inputFocus.focus();
+
+      document.addEventListener('keydown', popupEscPressHandler);
+    };
+
+    open.addEventListener('click', openModal);
+
+    var closeModal = function () {
+      modal.classList.add('hidden');
+      document.removeEventListener('keydown', popupEscPressHandler);
+    };
+
+    close.addEventListener('click', function () {
       closeModal();
-    }
-  };
+    });
 
-  var openModal = function () {
-    modal.classList.remove('hidden');
-    inputFocus.focus();
-
-    document.addEventListener('keydown', PopupEscPressHandler);
-  };
-
-  open.addEventListener('click', openModal);
-
-  var closeModal = function () {
-    modal.classList.add('hidden');
-    document.removeEventListener('keydown', PopupEscPressHandler);
-  };
-
-  close.addEventListener('click', function () {
-    closeModal();
-  });
-
-  modal.addEventListener('click', function (e) {
-    if (e.target !== e.currentTarget) {
-      return;
-    } else {
+    popupBtn.addEventListener('click', function () {
       closeModal();
-    }
-  });
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target !== e.currentTarget) {
+        return;
+      } else {
+        closeModal();
+      }
+    });
+  };
+
+
+  if (document.querySelector('.popup-header')) {
+    setPopup();
+  }
+
 
   // backend
   var TIMEOUT_IN_MS = 10000;
@@ -94,13 +108,10 @@
   var showMessage = function (result) {
     switch (result) {
       case 'success':
-        modal.classList.add('hidden');
         document.body.appendChild(successText);
         resetForm();
-
         break;
       case 'error':
-        modal.classList.add('hidden');
         document.body.appendChild(errorText);
         resetForm();
         break;
@@ -131,16 +142,16 @@
     showMessage('error');
   };
 
+
   // localStorage
-  var headerForm = document.querySelector('.popup-header__form');
-  var popupName = headerForm.querySelector('.popup-header__name');
-  var popupTel = headerForm.querySelector('.popup-header__tel');
+  var name = document.querySelectorAll('#name');
+  var tel = document.querySelectorAll('#tel');
 
   var isStorageSupport = true;
 
   try {
-    localStorage.getItem('popupName');
-    localStorage.getItem('popupTel');
+    localStorage.getItem('name');
+    localStorage.getItem('tel');
   } catch (err) {
     isStorageSupport = false;
   }
@@ -148,10 +159,9 @@
   var submitHandler = function (evt) {
     form.forEach(function (element) {
       if (isStorageSupport) {
-        localStorage.setItem('popupName', popupName.value);
-        localStorage.setItem('popupTel', popupTel.value);
+        localStorage.setItem('name', name.value);
+        localStorage.setItem('tel', tel.value);
       }
-
       save(new FormData(element), successPostHandler, errorPostHandler);
     });
 
@@ -199,6 +209,7 @@
     element.addEventListener('change', changeBorderHandler);
   });
 
+
   // tabs
   var setTab = function () {
     var tabNav = document.querySelectorAll('.tabs__item');
@@ -206,16 +217,16 @@
     var tabName;
 
     tabNav.forEach(function (item) {
-      item.addEventListener('click', SelectTabNav);
+      item.addEventListener('click', selectTabNav);
     });
 
-    function SelectTabNav() {
+    function selectTabNav(e) {
       tabNav.forEach(function (item) {
         item.classList.remove('tabs__item--active');
       });
 
-      this.classList.add('tabs__item--active');
-      tabName = this.getAttribute('data-tab-name');
+      e.currentTarget.classList.add('tabs__item--active');
+      tabName = e.currentTarget.getAttribute('data-tab-name');
       selectTabContent(tabName);
     }
 
@@ -230,23 +241,31 @@
     }
   };
 
-  setTab();
+  if (document.querySelectorAll('.tabs')) {
+    setTab();
+  }
 
   // accordion
-  document.querySelectorAll('.accordion__btn').forEach(function (item) {
-    item.addEventListener('click', function () {
-      var parent = item.parentNode;
+  var setAccordion = function () {
+    document.querySelectorAll('.accordion__btn').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var parent = item.parentNode;
 
-      if (parent.classList.contains('accordion__item--active')) {
-        parent.classList.remove('accordion__item--active');
-      } else {
-        document.querySelectorAll('.accordion__item').forEach(function (child) {
-          child.classList.remove('accordion__item--active');
-        });
+        if (parent.classList.contains('accordion__item--active')) {
+          parent.classList.remove('accordion__item--active');
+        } else {
+          document.querySelectorAll('.accordion__item').forEach(function (child) {
+            child.classList.remove('accordion__item--active');
+          });
 
-        parent.classList.toggle('accordion__item--active');
-      }
+          parent.classList.toggle('accordion__item--active');
+        }
+      });
     });
-  });
+  };
+
+  if (document.querySelectorAll('.accordion')) {
+    setAccordion();
+  }
 
 }());

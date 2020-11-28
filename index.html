@@ -58,7 +58,7 @@
       <nav class="header__nav main-nav">
         <ul class="main-nav__list">
           <li>
-            <a class="main-nav__tel" href="#">+ (972) 2 – 621 – 6581</a>
+            <a class="main-nav__tel" href="tel:+97226216581">+ (972) 2 – 621 – 6581</a>
           </li>
           <li>
             <a class="main-nav__call open-modal" href="#">заказать звонок</a>
@@ -70,7 +70,7 @@
     <section class="header__intro intro">
       <h2 class="intro__title visually-hidden">Израиль</h2>
       <p>Учёба, путешествие и карьера для еврейской молодёжи</p>
-      <button class="intro__scroll" type="button" aria-label="скролл вниз"></button>
+      <a class="intro__scroll" href="#" aria-label="скролл вниз"></a>
     </section>
 
     <section class="header__modal popup-header hidden">
@@ -79,18 +79,18 @@
           <h2>Заказать звонок</h2>
           <p>Оставьте ваши контактные данные, мы&nbsp;свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
           <form class="popup-header__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
-            <div class="popup-header__info">
+            <div class="form__info form__info--header-popup">
               <label class="visually-hidden" for="name">Имя</label>
-              <input class="popup-header__name" id="name" name="name" type="text" placeholder="имя">
+              <input class="form__name form__name--header-popup" id="name" name="name" type="text" placeholder="имя">
 
               <label class="visually-hidden" for="tel">Телефон</label>
-              <input class="popup-header__tel tel" id="tel" name="tel" type="tel" maxlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон" required="">
+              <input class="form__tel form__tel--header-popup tel" id="tel" name="tel" type="tel" maxlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон" required="">
 
-              <button class="popup-header__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
-              <div class="popup-header__checkbox checkbox">
+              <button class="form__btn form__btn--header-popup btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+              <div class="form__checkbox">
                 <label for="checkbox">
-                  <input class="checkbox__input visually-hidden" type="checkbox" id="checkbox" name="checkbox" checked="">
-                  <span class="checkbox__indicator"></span>
+                  <input class="form__input-checkbox visually-hidden" type="checkbox" id="checkbox" name="checkbox" checked="">
+                  <span class="form__indicator"></span>
                   Нажимая на кнопку, вы даёте согласие на обработку персональных данных
                 </label>
               </div>
@@ -200,10 +200,10 @@
         <h2>Хочу поехать!</h2>
         <p>Оставьте свой телефон и мы свяжемся&nbsp;с&nbsp;вами, подберём куратора и&nbsp;ответим на все вопросы!</p>
         <form class="contact__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
-          <div class="contact__form-block">
+          <div class="form__info form__info--contact">
             <label class="contact__form-label visually-hidden" for="telephone">Введите телефон</label>
-            <input class="contact__form-input contact__form-input--tel tel" id="telephone" name="tel" type="tel" maxlength="18" placeholder="телефон" required="">
-            <button class="contact__form-btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+            <input class="form__tel form__tel--contact tel" id="telephone" name="tel" type="tel" maxlength="18" placeholder="телефон" required="">
+            <button class="form__btn form__btn--contact btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
         </form>
       </div>
@@ -294,7 +294,7 @@
       <div class="photo__block">
         <h2>#masaisrael</h2>
         <p>Познакомьтесь с программой от&nbsp;первого лица! Многие участники ведут блоги и фотодневники о&nbsp;жизни,&nbsp;учёбе и путешествиях в&nbsp;Израиле.</p>
-        <a class="photo__btn btn" href="">смотреть фото
+        <a class="photo__btn btn" href="#">смотреть фото
           <svg class="photo__svg insta-btn" width="24" height="24">
             <use xlink:href="#icon-instagram"></use>
           </svg>
@@ -375,44 +375,11 @@
               <div class="reviews__slider-content">
                 <blockquote class="reviews__slider-name">
                   <cite class="reviews__slider-author">Ольга Михайлова</cite>
-                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сентябрь 2017</p>
                   <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
                   <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
                 </blockquote>
-                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
-
-                <div class="reviews__slider-nav">
-                  <div class="reviews__slider-page">
-                    <div class="reviews__slider-number">1 / 6</div>
-                    <div class="reviews__slider-arrows">
-                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
-                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
-                    </div>
-                  </div>
-                  <ul class="reviews__slider-social social">
-                    <li>
-                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                        <svg class="social__fb" width="24" height="24">
-                          <use xlink:href="#icon-facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                        <svg class="social__twitter" width="24" height="24">
-                          <use xlink:href="#icon-twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                        <svg class="social__inst" width="24" height="24">
-                          <use xlink:href="#icon-instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</a>
               </div>
             </li>
             <li class="slider-reviews__item">
@@ -427,44 +394,11 @@
               <div class="reviews__slider-content">
                 <blockquote class="reviews__slider-name">
                   <cite class="reviews__slider-author">Ольга Михайлова</cite>
-                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сентябрь 2017</p>
                   <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
                   <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
                 </blockquote>
-                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
-
-                <div class="reviews__slider-nav">
-                  <div class="reviews__slider-page">
-                    <div class="reviews__slider-number">2 / 6</div>
-                    <div class="reviews__slider-arrows">
-                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
-                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
-                    </div>
-                  </div>
-                  <ul class="reviews__slider-social social">
-                    <li>
-                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                        <svg class="social__fb" width="24" height="24">
-                          <use xlink:href="#icon-facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                        <svg class="social__twitter" width="24" height="24">
-                          <use xlink:href="#icon-twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                        <svg class="social__inst" width="24" height="24">
-                          <use xlink:href="#icon-instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</a>
               </div>
             </li>
             <li class="slider-reviews__item">
@@ -479,44 +413,11 @@
               <div class="reviews__slider-content">
                 <blockquote class="reviews__slider-name">
                   <cite class="reviews__slider-author">Ольга Михайлова</cite>
-                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сентябрь 2017</p>
                   <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
                   <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
                 </blockquote>
-                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
-
-                <div class="reviews__slider-nav">
-                  <div class="reviews__slider-page">
-                    <div class="reviews__slider-number">3 / 6</div>
-                    <div class="reviews__slider-arrows">
-                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
-                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
-                    </div>
-                  </div>
-                  <ul class="reviews__slider-social social">
-                    <li>
-                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                        <svg class="social__fb" width="24" height="24">
-                          <use xlink:href="#icon-facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                        <svg class="social__twitter" width="24" height="24">
-                          <use xlink:href="#icon-twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                        <svg class="social__inst" width="24" height="24">
-                          <use xlink:href="#icon-instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</a>
               </div>
             </li>
             <li class="slider-reviews__item">
@@ -531,44 +432,11 @@
               <div class="reviews__slider-content">
                 <blockquote class="reviews__slider-name">
                   <cite class="reviews__slider-author">Ольга Михайлова</cite>
-                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сентябрь 2017</p>
                   <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
                   <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
                 </blockquote>
-                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
-
-                <div class="reviews__slider-nav">
-                  <div class="reviews__slider-page">
-                    <div class="reviews__slider-number">4 / 6</div>
-                    <div class="reviews__slider-arrows">
-                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
-                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
-                    </div>
-                  </div>
-                  <ul class="reviews__slider-social social">
-                    <li>
-                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                        <svg class="social__fb" width="24" height="24">
-                          <use xlink:href="#icon-facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                        <svg class="social__twitter" width="24" height="24">
-                          <use xlink:href="#icon-twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                        <svg class="social__inst" width="24" height="24">
-                          <use xlink:href="#icon-instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</a>
               </div>
             </li>
             <li class="slider-reviews__item">
@@ -583,44 +451,11 @@
               <div class="reviews__slider-content">
                 <blockquote class="reviews__slider-name">
                   <cite class="reviews__slider-author">Ольга Михайлова</cite>
-                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сентябрь 2017</p>
                   <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
                   <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
                 </blockquote>
-                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
-
-                <div class="reviews__slider-nav">
-                  <div class="reviews__slider-page">
-                    <div class="reviews__slider-number">5 / 6</div>
-                    <div class="reviews__slider-arrows">
-                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
-                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
-                    </div>
-                  </div>
-                  <ul class="reviews__slider-social social">
-                    <li>
-                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                        <svg class="social__fb" width="24" height="24">
-                          <use xlink:href="#icon-facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                        <svg class="social__twitter" width="24" height="24">
-                          <use xlink:href="#icon-twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                        <svg class="social__inst" width="24" height="24">
-                          <use xlink:href="#icon-instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</a>
               </div>
             </li>
             <li class="slider-reviews__item">
@@ -635,47 +470,46 @@
               <div class="reviews__slider-content">
                 <blockquote class="reviews__slider-name">
                   <cite class="reviews__slider-author">Ольга Михайлова</cite>
-                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сетнябрь 2017</p>
+                  <p class="reviews__slider-program"><span>Программа: </span>Арт-Тель, февраль-сентябрь 2017</p>
                   <p class="reviews__slider-text">Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
                   <p class="reviews__slider-text">С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
                 </blockquote>
-                <button class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</button>
-
-                <div class="reviews__slider-nav">
-                  <div class="reviews__slider-page">
-                    <div class="reviews__slider-number">6 / 6</div>
-                    <div class="reviews__slider-arrows">
-                      <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
-                      <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
-                    </div>
-                  </div>
-                  <ul class="reviews__slider-social social">
-                    <li>
-                      <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
-                        <svg class="social__fb" width="24" height="24">
-                          <use xlink:href="#icon-facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
-                        <svg class="social__twitter" width="24" height="24">
-                          <use xlink:href="#icon-twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-                        <svg class="social__inst" width="24" height="24">
-                          <use xlink:href="#icon-instagram"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="reviews__slider-more" aria-label="читать полный текст отзыва">Читать подробнее</a>
               </div>
             </li>
           </ul>
+          <div class="reviews__slider-nav">
+            <div class="reviews__slider-page">
+              <div class="reviews__slider-number"></div>
+              <div class="reviews__slider-arrows">
+                <button type="button" class="reviews__slider-prev" aria-label="предыдущий слайд"></button>
+                <button type="button" class="reviews__slider-next" aria-label="следующий слайд"></button>
+              </div>
+            </div>
+            <ul class="reviews__social social">
+              <li>
+                <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                  <svg class="social__fb" width="24" height="24">
+                    <use xlink:href="#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+                  <svg class="social__twitter" width="24" height="24">
+                    <use xlink:href="#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+                  <svg class="social__inst" width="24" height="24">
+                    <use xlink:href="#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
       </div>
     </section>
 
@@ -699,24 +533,24 @@
               </p>
               <p class="details__tutor-address">Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»</p>
             </div>
-            <ul class="details__social">
+            <ul class="details__social social">
               <li>
-                <a class="details__button" href="http://facebook.com/" aria-label="Фейсбук">
-                  <svg class="details__fb" width="24" height="24">
+                <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+                  <svg class="social__fb" width="24" height="24">
                     <use xlink:href="#icon-facebook"></use>
                   </svg>
                 </a>
               </li>
               <li>
-                <a class="details__button" href="http://whatsapp.com/" aria-label="Вотсап">
-                  <svg class="details__whatsapp" width="24" height="24">
+                <a class="social__button" href="http://whatsapp.com/" aria-label="Вотсап">
+                  <svg class="social__whatsapp" width="24" height="24">
                     <use xlink:href="#icon-whatsapp"></use>
                   </svg>
                 </a>
               </li>
               <li>
-                <a class="details__button" href="https://www.telegram.com/" aria-label="Телеграм">
-                  <svg class="details__telegram" width="24" height="24">
+                <a class="social__button" href="https://www.telegram.com/" aria-label="Телеграм">
+                  <svg class="social__telegram" width="24" height="24">
                     <use xlink:href="#icon-telegram"></use>
                   </svg>
                 </a>
@@ -741,14 +575,14 @@
           <p class="feedback__text">Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!</p>
         </div>
         <form class="feedback__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
-          <div class="feedback__form-block">
+          <div class="form__info form__info--feedback">
             <label class="visually-hidden" for="feedback__name">Имя</label>
-            <input class="feedback__name" id="feedback__name" name="name" type="text" placeholder="имя">
+            <input class="form__name form__name--feedback" id="feedback__name" name="name" type="text" placeholder="имя">
 
             <label class="visually-hidden" for="phone">Телефон</label>
-            <input class="feedback__tel tel" id="phone" name="tel" type="tel" maxlength="18" placeholder="+7 (923) 41" required="">
+            <input class="form__tel form__tel--feedback tel" id="phone" name="tel" type="tel" maxlength="18" placeholder="+7 (923) 41" required="">
 
-            <button class="feedback__btn btn" type="submit" aria-label="Отправить">перезвоните мне</button>
+            <button class="form__btn form__btn--feedback btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
         </form>
       </div>
@@ -762,24 +596,24 @@
     <div class="footer__copyright">
       <p>Copyright someDesignCompany ©2019</p>
     </div>
-    <ul class="footer__social">
+    <ul class="footer__social social">
       <li>
-        <a class="footer__button" href="http://facebook.com/" aria-label="Фейсбук">
-          <svg class="footer__fb" width="24" height="24">
+        <a class="social__button" href="http://facebook.com/" aria-label="Фейсбук">
+          <svg class="social__fb" width="24" height="24">
             <use xlink:href="#icon-facebook"></use>
           </svg>
         </a>
       </li>
       <li>
-        <a class="footer__button" href="http://twitter.com/" aria-label="Твиттер">
-          <svg class="footer__twitter" width="24" height="24">
+        <a class="social__button" href="http://twitter.com/" aria-label="Твиттер">
+          <svg class="social__twitter" width="24" height="24">
             <use xlink:href="#icon-twitter"></use>
           </svg>
         </a>
       </li>
       <li>
-        <a class="footer__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
-          <svg class="footer__inst" width="24" height="24">
+        <a class="social__button" href="https://www.instagram.com/" aria-label="Инстаграмм">
+          <svg class="social__inst" width="24" height="24">
             <use xlink:href="#icon-instagram"></use>
           </svg>
         </a>
@@ -795,7 +629,7 @@
         <div class="success__block">
           <h2>Заявка принята</h2>
           <p>Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
-          <button class="success__btn btn" type="submit" aria-label="Понятно">понятно</button>
+          <button class="success__btn btn" type="button" aria-label="Понятно">понятно</button>
           <button class="success__close close" type="button" aria-label="Закрыть"></button>
         </div>
       </div>
@@ -811,7 +645,6 @@
     </section>
   </template>
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/vendor.js"></script>
 <script src="js/main.js"></script>
 </body>
