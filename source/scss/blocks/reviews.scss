@@ -191,7 +191,7 @@
     &::before {
       content: url("../img/arrow-right.svg");
       position: absolute;
-      top: 0px;
+      top: 0;
       right: -10px;
 
       width: 11px;
@@ -265,10 +265,6 @@
   }
 
   .reviews__slider-photo {
-    // width: 76%;
-    // max-height: 321px;
-    // height: 80%;
-    // width: auto;
     width: 245px;
     height: 320px;
   }
@@ -341,11 +337,10 @@
     margin-left: 0;
     margin-right: 0;
     padding-left: 5px;
-
   }
 
   .reviews__slider-arrows {
-margin-left: 14px;
+    margin-left: 14px;
     justify-content: space-between;
 
     min-width: 50px;
@@ -353,13 +348,6 @@ margin-left: 14px;
     & button {
       width: 15px;
       height: 20px;
-      // margin-right: 20px;
-
-      // margin-left: 13px;
-      // left: 50%;
-      // top: 40%;
-      // transform: translate(-40%, -35%);
-
     }
 
     & .reviews__slider-prev {
@@ -369,8 +357,6 @@ margin-left: 14px;
 
         width: 11px;
         height: 18px;
-
-
       }
     }
 

@@ -61,22 +61,6 @@
   background-color: transparent;
 }
 
-.popup-header__close {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-
-  width: 18px;
-  height: 17px;
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-image: url("../img/close.svg");
-  background-repeat: no-repeat;
-  background-color: transparent;
-}
-
 @media (max-width: $mobile-width) {
   .popup-header__wrapper {
     justify-content: center;
@@ -124,9 +108,6 @@
 
   .popup-header__form {
     width: 100%;
-  }
-
-  .popup-header__form {
 
     & .form__btn {
       width: 265px;
@@ -134,21 +115,5 @@
       margin-bottom: 15px;
       margin-top: 24px;
     }
-  }
-
-  .popup-header__close {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-
-    width: 18px;
-    height: 17px;
-
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-image: url("../img/close.svg");
-    background-repeat: no-repeat;
-    background-color: transparent;
   }
 }

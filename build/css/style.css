@@ -401,19 +401,6 @@ img {
   background-repeat: no-repeat;
   background-color: transparent; }
 
-.popup-header__close {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  width: 18px;
-  height: 17px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-image: url("../img/close.svg");
-  background-repeat: no-repeat;
-  background-color: transparent; }
-
 @media (max-width: 767px) {
   .popup-header__wrapper {
     -webkit-box-pack: center;
@@ -454,22 +441,10 @@ img {
     top: 24px; }
   .popup-header__form {
     width: 100%; }
-  .popup-header__form .form__btn {
-    width: 265px;
-    margin-bottom: 15px;
-    margin-top: 24px; }
-  .popup-header__close {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    width: 18px;
-    height: 17px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-image: url("../img/close.svg");
-    background-repeat: no-repeat;
-    background-color: transparent; } }
+    .popup-header__form .form__btn {
+      width: 265px;
+      margin-bottom: 15px;
+      margin-top: 24px; } }
 
 .success {
   position: fixed;
@@ -2101,7 +2076,7 @@ img {
     .reviews__slider-arrows .reviews__slider-next::before {
       content: url("../img/arrow-right.svg");
       position: absolute;
-      top: 0px;
+      top: 0;
       right: -10px;
       width: 11px;
       height: 18px;
