@@ -186,6 +186,11 @@
   .details {
     &::before {
       content: none;
+      background-image: none;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: none;
+      }
     }
   }
 
@@ -206,7 +211,8 @@
   }
 
   .details__info {
-    margin-left: 3%;
+    margin-left: 0;
+    padding-left: 3%;
     width: 100%;
 
     & .details__city {
