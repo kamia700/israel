@@ -6,7 +6,7 @@
   min-height: 875px;
   margin: 0 auto;
 
-  background-color: $text;
+  background-color: linear-gradient(to bottom, $white 30%, $bg-gradient 50%, $white 70%);
   background-image: url("../img/bg@1x.jpg");
   background-position: top;
   background-repeat: no-repeat;
@@ -20,8 +20,7 @@
 .header__block {
   position: relative;
 
-  padding: 0 15px;
-  padding-top: 32px;
+  padding-top: 30px;
   width: 100%;
 }
 
@@ -61,8 +60,6 @@
 
     & .header__block {
       padding: 0;
-
-      background-image: linear-gradient($white 50%, transparent 50%);
     }
   }
 

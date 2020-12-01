@@ -10,28 +10,41 @@
     line-height: 18px;
     font-weight: 500;
     color: $text;
-    display: block;
+    display: inline;
+    vertical-align: middle;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 
   & li {
-    padding: 15px 0;
-    min-width: 10%;
+    padding: 15px 15px;
+    min-width: 20%;
   }
 
   & li:nth-child(4n-3) {
     text-align: left;
-    padding-right: 2%;
   }
 
   & li:nth-child(4n-2) {
     text-align: left;
-    padding-right: 2%;
-    margin-right: 19%;
+    padding-right: 10%;
+    margin-right: auto;
   }
 
   & li:nth-child(4n-1) {
     text-align: right;
-    padding-left: 2%;
+    padding-left: 9%;
+    margin-left: auto;
   }
 
   & li:nth-child(4n) {
@@ -42,11 +55,12 @@
   & li:last-child {
     text-align: right;
     margin-right: 0;
-    padding-right: 0;
+    padding-right: 15px;
+
+    margin-left: auto;
   }
 
   & .main-nav__call {
-    display: block;
     border-bottom: 2px dashed $text;
     font-variant: small-caps;
     margin-right: 4px;
@@ -54,14 +68,18 @@
 }
 
 @media (max-width: $mobile-width) {
+  .main-nav {
+    min-height: 92px;
+  }
+
   .main-nav__list {
     flex-direction: column;
     align-items: flex-end;
-    padding: 20px 7px;
+    padding: 17px 7px;
 
     & li {
       padding: 0;
-      padding-bottom: 8px;
+      padding-bottom: 5px;
     }
 
     & li:nth-child(4n-3) {

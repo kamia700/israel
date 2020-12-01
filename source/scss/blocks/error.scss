@@ -4,17 +4,12 @@
   height: 100%;
 
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: auto;
+  left: 0;
+  overflow: hidden;
 
 
   background-color: $overlay-modal;
   z-index: 5;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   & p {
     color: $text;
@@ -22,6 +17,16 @@
     font-weight: 700;
     text-align: center;
   }
+}
+
+.error__wrapper {
+  position: absolute;
+  width: 80%;
+  height: auto;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: $mobile-width) {

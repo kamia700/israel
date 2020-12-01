@@ -154,14 +154,16 @@
   & .form__btn--feedback {
     width: 216px;
   }
+}
 
-  & .form__tel--feedback {
-    background-image: url("../img/input-bg@1x.svg");
-    background-repeat: no-repeat;
-    background-position: left;
-    border: 2px solid $btn-gradient;
+@media (max-width: $tablet-width) {
+  .form__info--feedback {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 }
+
 
 @media (max-width: $mobile-width) {
   .form__info {

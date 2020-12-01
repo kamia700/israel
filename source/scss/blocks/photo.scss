@@ -1,16 +1,16 @@
 .photo {
   display: flex;
-  justify-content: flex-end;
 
   max-width: 1366px;
   min-height: 585px;
   margin: 0 auto;
 
-  background-color: $text;
+  background-color: linear-gradient(to bottom, $white 30%, $bg-gradient 50%, $white 80%);
+
   background-image: url("../img/cynthia@1x.jpg");
-  background-position: center;
+  background-position: 3px -12px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/cynthia@2x.jpg");
@@ -23,9 +23,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 
-  padding-bottom: 5.5%;
+  margin-left: auto;
+  padding-top: 110px;
 
   & h2 {
     @include title;
@@ -87,13 +87,6 @@
     min-height: 400px;
     justify-content: center;
 
-    background-image: linear-gradient(to bottom, $white 30%, $text 40%, $white 70%);
-  }
-
-  .photo__block {
-    width: 100%;
-    align-items: center;
-
     background-image: url("../img/cynthia-mobile@1x.jpg");
     background-position: center 40%;
     background-size: 100%;
@@ -102,6 +95,13 @@
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/cynthia-mobile@2x.jpg");
     }
+  }
+
+  .photo__block {
+    width: 100%;
+    align-items: center;
+
+    padding-top: 0;
 
     & h2 {
       max-width: 100%;

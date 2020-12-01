@@ -15,8 +15,6 @@
 
 .terms__block {
   display: flex;
-  justify-content: flex-end;
-
   padding-bottom: 50px;
 
   background-image: url("../img/terms-bg@1x.png"), url("../img/stamp@1x.png");
@@ -30,9 +28,11 @@
 }
 
 .terms__wrapper {
-  max-width: 552px;
+  max-width: 555px;
+  width: 555px;
   margin-top: 162px;
   margin-right: 115px;
+  margin-left: auto;
 
   & h2 {
     @include title;

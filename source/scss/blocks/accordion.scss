@@ -114,21 +114,21 @@
 
 @media (max-width: $tablet-width) {
   .accordion__list {
-    align-items: center;
-    width: 100%;
-
     counter-reset: myCounter;
+    width: 100%;
+    align-items: center;
 
     & li {
-      width: 90%;
+      width: 91%;
     }
   }
 
   .accordion__btn {
-    max-width: 100%;
+    min-width: 288px;
 
     padding-left: 25px;
     padding-bottom: 18px;
+    padding-right: 30px;
     letter-spacing: 0;
 
     &::before {
@@ -136,8 +136,11 @@
     }
 
     &::after {
+      width: 20px;
+      height: 20px;
+
       top: 40px;
-      right: -20px;
+      right: 0;
     }
 
     p {
@@ -171,15 +174,18 @@
 
       margin-bottom: 15px;
       margin-top: 0;
-      max-width: 100%;
+      max-width: 95%;
     }
   }
 
   .accordion__item.accordion__item--active {
     & .accordion__btn {
       &::after {
+        width: 20px;
+        height: 20px;
+
         top: 40px;
-        right: -20px;
+        right: 0;
       }
     }
   }

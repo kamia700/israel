@@ -18,7 +18,7 @@
   max-width: 1175px;
 
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 15px;
 
   & h2 {
     @include title;
@@ -142,14 +142,12 @@
 }
 
 .reviews__slider-arrows {
-  display: flex;
-
   & button {
     border: none;
     outline: none;
     background: transparent;
 
-    width: 15px;
+    width: 20px;
     height: 20px;
 
     opacity: 0.2;
@@ -192,7 +190,7 @@
       content: url("../img/arrow-right.svg");
       position: absolute;
       top: 0;
-      right: -10px;
+      right: 0;
 
       width: 11px;
       height: 18px;
@@ -230,6 +228,11 @@
   }
 }
 
+@media (max-width: $tablet-width) {
+  .reviews__wrapper {
+    margin-top: 150px;
+  }
+}
 
 @media (max-width: $mobile-width) {
   .reviews {
@@ -245,6 +248,7 @@
 
   .reviews__wrapper {
     margin-bottom: 54px;
+    margin-top: 75px;
 
     & h2 {
       font-size: 32px;
@@ -346,7 +350,7 @@
     min-width: 50px;
 
     & button {
-      width: 15px;
+      width: 25px;
       height: 20px;
     }
 

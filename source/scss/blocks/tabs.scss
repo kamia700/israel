@@ -45,8 +45,19 @@
 }
 
 .tabs__item.tabs__item--active {
-  background: linear-gradient(108.42deg, $btn-gradient 20.46%, $btn-yellow 65.31%);
-  clip-path: polygon(0% 0%, 87% 0, 100% 49%, 87% 100%, 0% 100%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url("../img/bg-tabs.svg");
+
+    width: 228px;
+    height: 68px;
+
+    top: 0;
+    left: 0;
+  }
 
   &:not(:first-child) {
     padding-top: 25px;
@@ -150,19 +161,7 @@
 .tabs__item:not(.tabs__item--active):hover span {
   color: $btn-gradient;
   opacity: 1;
-  background: linear-gradient(108.42deg, $btn-gradient 20.46%, $btn-yellow 65.31%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
-
-.tabs__item--active:hover span {
-  color: $btn-gradient;
-  opacity: 1;
-  background: linear-gradient(108.42deg, $black-gradient 20.46%, $white 65.31%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 
 @media (max-width: $mobile-width) {
   .tabs__list {
@@ -195,6 +194,11 @@
   .tabs__item.tabs__item--active {
     clip-path: none;
     border-radius: 53px;
+
+    &::before {
+      content: none;
+      background-image: none;
+    }
 
     &:not(:first-child) {
       padding-top: 17px;
