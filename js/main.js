@@ -1,13 +1,13 @@
 'use strict';
 
 (function () {
+  var body = document.querySelector('body');
 
   var setPopup = function () {
     var modal = document.querySelector('.popup-header');
     var close = document.querySelector('.close');
     var open = document.querySelector('.open-modal');
     var inputFocus = document.querySelector('.form__name--header-popup');
-    var popupBtn = document.querySelector('.form__btn--header-popup');
 
     var popupEscPressHandler = function (evt) {
       if (evt.key === 'Escape') {
@@ -18,6 +18,10 @@
 
     var openModal = function () {
       modal.classList.remove('hidden');
+
+      body.classList.add('lock');
+      body.classList.add('active');
+
       inputFocus.focus();
 
       document.addEventListener('keydown', popupEscPressHandler);
@@ -27,14 +31,14 @@
 
     var closeModal = function () {
       modal.classList.add('hidden');
+
+      body.classList.remove('lock');
+      body.classList.remove('active');
+
       document.removeEventListener('keydown', popupEscPressHandler);
     };
 
     close.addEventListener('click', function () {
-      closeModal();
-    });
-
-    popupBtn.addEventListener('click', function () {
       closeModal();
     });
 
@@ -54,9 +58,7 @@
 
 
   // backend
-  var TIMEOUT_IN_MS = 10000;
-
-  var URL_POST = 'http://echo.htmlacademy.ru';
+  var URL_POST = 'https://echo.htmlacademy.ru';
 
   var StatusCode = {
     OK: 200
@@ -64,7 +66,7 @@
 
   var createNewXhr = function (onLoad, onError) {
     var xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
+    xhr.overrideMimeType('application/json');
 
     xhr.addEventListener('load', function () {
       if (xhr.status === StatusCode.OK) {
@@ -73,14 +75,13 @@
         onError('Статус ответа: ' + xhr.status + ' ' + xhr.statusText);
       }
     });
+
     xhr.addEventListener('error', function () {
       onError('Произошла ошибка соединения');
     });
     xhr.addEventListener('timeout', function () {
       onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
     });
-
-    xhr.timeout = TIMEOUT_IN_MS;
 
     return xhr;
   };
@@ -94,10 +95,8 @@
 
   // message
   var form = document.querySelectorAll('.form');
-  var successTemplate = document.querySelector('#success').content.querySelector('.success');
-  var errorTemplate = document.querySelector('#error').content.querySelector('.error');
-  var successText = successTemplate.cloneNode(true);
-  var errorText = errorTemplate.cloneNode(true);
+  var error = document.querySelector('.error');
+  var success = document.querySelector('.success');
 
   var resetForm = function () {
     form.forEach(function (element) {
@@ -108,28 +107,33 @@
   var showMessage = function (result) {
     switch (result) {
       case 'success':
-        document.body.appendChild(successText);
+        success.classList.remove('hidden');
         resetForm();
         break;
       case 'error':
-        document.body.appendChild(errorText);
+        error.classList.remove('hidden');
         resetForm();
         break;
     }
+
+    body.classList.add('lock');
     document.addEventListener('click', messageСloseHandler);
     document.addEventListener('keydown', messageСloseHandler);
   };
 
   var messageСloseHandler = function (evt) {
-    var error = document.querySelector('.error');
-    var success = document.querySelector('.success');
-
     if (error && (evt.keyCode === 27 || evt.button === 0)) {
-      errorText.remove();
-    } else
-    if (success && (evt.keyCode === 27 || evt.button === 0)) {
-      successText.remove();
+      error.classList.add('hidden');
     }
+
+    if (success && (evt.keyCode === 27 || evt.button === 0)) {
+      success.classList.add('hidden');
+    }
+
+    if (!(body.classList.contains('active'))) {
+      body.classList.remove('lock');
+    }
+
     document.removeEventListener('click', messageСloseHandler);
     document.removeEventListener('keydown', messageСloseHandler);
   };
@@ -143,25 +147,9 @@
   };
 
 
-  // localStorage
-  var name = document.querySelectorAll('#name');
-  var tel = document.querySelectorAll('#tel');
-
-  var isStorageSupport = true;
-
-  try {
-    localStorage.getItem('name');
-    localStorage.getItem('tel');
-  } catch (err) {
-    isStorageSupport = false;
-  }
-
+  // submit
   var submitHandler = function (evt) {
     form.forEach(function (element) {
-      if (isStorageSupport) {
-        localStorage.setItem('name', name.value);
-        localStorage.setItem('tel', tel.value);
-      }
       save(new FormData(element), successPostHandler, errorPostHandler);
     });
 
@@ -171,6 +159,38 @@
   form.forEach(function (element) {
     element.addEventListener('submit', submitHandler);
   });
+
+
+  // localStorage
+  var subPopup = function () {
+    var name = document.querySelector('.form__name--header-popup');
+    var tel = document.querySelector('.form__tel--header-popup');
+    var popupForm = document.querySelector('.popup-header__form');
+
+    var isStorageSupport = true;
+
+    try {
+      localStorage.getItem('name');
+      localStorage.getItem('tel');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    var subPopupHandler = function (evt) {
+      if (isStorageSupport) {
+        localStorage.setItem('name', name.value);
+        localStorage.setItem('tel', tel.value);
+      }
+
+      evt.preventDefault();
+    };
+
+    popupForm.addEventListener('submit', subPopupHandler);
+  };
+
+  if (document.querySelector('.popup-header')) {
+    subPopup();
+  }
 
 
   // validity
@@ -190,14 +210,14 @@
 
   var changeBorderHandler = function () {
     form.forEach(function (element) {
-      var inputs = Array.from(element.querySelectorAll('input:invalid:not(:placeholder-shown)'));
+      var inputs = element.querySelectorAll('input:invalid:not(:placeholder-shown)');
       inputs.forEach(function (el) {
         el.classList.add('validation-error');
       });
     });
 
     form.forEach(function (element) {
-      var inputsValid = Array.from(element.querySelectorAll('input:valid:not(:placeholder-shown)'));
+      var inputsValid = element.querySelectorAll('input:valid:not(:placeholder-shown)');
       inputsValid.forEach(function (el) {
         el.classList.add('validation-success');
       });
@@ -241,7 +261,7 @@
     }
   };
 
-  if (document.querySelectorAll('.tabs')) {
+  if (document.querySelector('.tabs')) {
     setTab();
   }
 
@@ -264,7 +284,7 @@
     });
   };
 
-  if (document.querySelectorAll('.accordion')) {
+  if (document.querySelector('.accordion')) {
     setAccordion();
   }
 
