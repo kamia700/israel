@@ -220,24 +220,12 @@ img {
       opacity: 0.5; }
   .main-nav__list li {
     padding: 15px 15px;
-    min-width: 20%; }
-  .main-nav__list li:nth-child(4n-3) {
-    text-align: left; }
-  .main-nav__list li:nth-child(4n-2) {
+    min-width: 50%; }
+  .main-nav__list li:first-child {
     text-align: left;
-    padding-right: 10%;
     margin-right: auto; }
-  .main-nav__list li:nth-child(4n-1) {
+  .main-nav__list li:nth-child(2n) {
     text-align: right;
-    padding-left: 9%;
-    margin-left: auto; }
-  .main-nav__list li:nth-child(4n) {
-    text-align: right;
-    padding-left: 2%; }
-  .main-nav__list li:last-child {
-    text-align: right;
-    margin-right: 0;
-    padding-right: 15px;
     margin-left: auto; }
   .main-nav__list .main-nav__call {
     border-bottom: 2px dashed #484848;
@@ -259,14 +247,10 @@ img {
     .main-nav__list li {
       padding: 0;
       padding-bottom: 5px; }
-    .main-nav__list li:nth-child(4n-3) {
-      padding-right: 0; }
-    .main-nav__list li:nth-child(4n-2) {
-      padding-right: 0;
-      margin-right: 0; }
-    .main-nav__list li:nth-child(4n-1),
-    .main-nav__list li:nth-child(4n) {
-      padding-left: 0; }
+    .main-nav__list li:first-child {
+      margin-left: auto;
+      margin-right: 0;
+      text-align: right; }
     .main-nav__list a {
       font-size: 14px;
       line-height: 17px; } }
@@ -958,7 +942,8 @@ img {
   .tabs__item.tabs__item--active {
     -webkit-clip-path: none;
             clip-path: none;
-    border-radius: 53px; }
+    border-radius: 53px;
+    background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%); }
     .tabs__item.tabs__item--active::before {
       content: none;
       background-image: none; }
@@ -1663,7 +1648,7 @@ img {
   background-image: url("../img/cynthia@1x.jpg");
   background-position: 3px -12px;
   background-repeat: no-repeat;
-  background-size: auto; }
+  background-size: cover; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .photo {
       background-image: url("../img/cynthia@2x.jpg"); } }
@@ -2803,6 +2788,16 @@ img {
     padding-left: 25px;
     cursor: pointer; }
   .form__checkbox .form__input-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    border-color: transparent; }
+  .form__checkbox .form__input-checkbox:focus {
     display: none; }
   .form__checkbox .form__indicator {
     position: absolute;
@@ -2811,10 +2806,10 @@ img {
     top: 0;
     left: 0;
     background-image: url("../img/checkbox.svg"); }
-  .form__checkbox input:checked + .form__indicator {
+  .form__checkbox .form__input-checkbox:checked + .form__indicator {
     background-image: url("../img/checkbox-on.svg"); }
-  .form__checkbox input:focus + .form__indicator {
-    outline: 2px dotted #484848; }
+  .form__checkbox .form__input-checkbox:focus:not(:checked) + .form__indicator {
+    outline: 2px dotted #ff0000; }
 
 .form__info--contact {
   position: relative;

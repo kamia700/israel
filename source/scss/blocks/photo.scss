@@ -10,7 +10,7 @@
   background-image: url("../img/cynthia@1x.jpg");
   background-position: 3px -12px;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/cynthia@2x.jpg");

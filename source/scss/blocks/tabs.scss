@@ -194,6 +194,7 @@
   .tabs__item.tabs__item--active {
     clip-path: none;
     border-radius: 53px;
+    background: linear-gradient(108.42deg, $btn-gradient 20.46%, $btn-yellow 65.31%);
 
     &::before {
       content: none;

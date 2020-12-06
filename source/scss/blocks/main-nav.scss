@@ -28,35 +28,16 @@
 
   & li {
     padding: 15px 15px;
-    min-width: 20%;
+    min-width: 50%;
   }
 
-  & li:nth-child(4n-3) {
+  & li:first-child {
     text-align: left;
-  }
-
-  & li:nth-child(4n-2) {
-    text-align: left;
-    padding-right: 10%;
     margin-right: auto;
   }
 
-  & li:nth-child(4n-1) {
+  & li:nth-child(2n) {
     text-align: right;
-    padding-left: 9%;
-    margin-left: auto;
-  }
-
-  & li:nth-child(4n) {
-    text-align: right;
-    padding-left: 2%;
-  }
-
-  & li:last-child {
-    text-align: right;
-    margin-right: 0;
-    padding-right: 15px;
-
     margin-left: auto;
   }
 
@@ -82,18 +63,10 @@
       padding-bottom: 5px;
     }
 
-    & li:nth-child(4n-3) {
-      padding-right: 0;
-    }
-
-    & li:nth-child(4n-2) {
-      padding-right: 0;
+    & li:first-child {
+      margin-left: auto;
       margin-right: 0;
-    }
-
-    & li:nth-child(4n-1),
-    li:nth-child(4n) {
-      padding-left: 0;
+      text-align: right;
     }
 
     & a {

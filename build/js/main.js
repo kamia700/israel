@@ -101,6 +101,7 @@
   var resetForm = function () {
     form.forEach(function (element) {
       element.reset();
+      removeClass();
     });
   };
 
@@ -152,7 +153,6 @@
     form.forEach(function (element) {
       save(new FormData(element), successPostHandler, errorPostHandler);
     });
-
     evt.preventDefault();
   };
 
@@ -192,9 +192,9 @@
     subPopup();
   }
 
-
   // validity
   var telInput = document.querySelectorAll('.tel');
+  var nameInput = document.querySelectorAll('.form__name');
 
   var telInputHandler = function () {
     telInput.forEach(function (element) {
@@ -208,10 +208,23 @@
     });
   };
 
+  var nameInputHandler = function () {
+    nameInput.forEach(function (inp) {
+      if (inp.validity.valueMissing) {
+        inp.setCustomValidity('Обязательное поле');
+      } else {
+        inp.setCustomValidity('');
+      }
+    });
+  };
+
   var changeBorderHandler = function () {
     form.forEach(function (element) {
       var inputs = element.querySelectorAll('input:invalid:not(:placeholder-shown)');
       inputs.forEach(function (el) {
+        if (el.classList.contains('validation-success')) {
+          el.classList.remove('validation-success');
+        }
         el.classList.add('validation-error');
       });
     });
@@ -219,16 +232,33 @@
     form.forEach(function (element) {
       var inputsValid = element.querySelectorAll('input:valid:not(:placeholder-shown)');
       inputsValid.forEach(function (el) {
+        if (el.classList.contains('validation-error')) {
+          el.classList.remove('validation-error');
+        }
         el.classList.add('validation-success');
       });
     });
   };
 
-  telInput.forEach(function (element) {
-    element.addEventListener('input', telInputHandler);
-    element.addEventListener('change', changeBorderHandler);
+  var removeClass = function () {
+    form.forEach(function (element) {
+      var input = element.querySelectorAll('input');
+      input.forEach(function (el) {
+        el.classList.remove('validation-success');
+        el.classList.remove('validation-error');
+      });
+    });
+  };
+
+  nameInput.forEach(function (item) {
+    item.addEventListener('input', nameInputHandler);
+    item.addEventListener('change', changeBorderHandler);
   });
 
+  telInput.forEach(function (el) {
+    el.addEventListener('input', telInputHandler);
+    el.addEventListener('change', changeBorderHandler);
+  });
 
   // tabs
   var setTab = function () {

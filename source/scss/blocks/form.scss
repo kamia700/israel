@@ -95,6 +95,19 @@
   }
 
   & .form__input-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+
+    padding: 0;
+    margin: 0;
+    border-color: transparent;
+  }
+
+  & .form__input-checkbox:focus {
     display: none;
   }
 
@@ -104,19 +117,17 @@
     height: 16px;
     top: 0;
     left: 0;
-
     background-image: url("../img/checkbox.svg");
   }
 
-  & input:checked + .form__indicator {
+  & .form__input-checkbox:checked + .form__indicator {
     background-image: url("../img/checkbox-on.svg");
   }
 
-  & input:focus + .form__indicator {
-    outline: 2px dotted $text;
+  & .form__input-checkbox:focus:not(:checked) + .form__indicator {
+      outline: 2px dotted $input-error;
   }
 }
-
 
 .form__info--contact {
   position: relative;

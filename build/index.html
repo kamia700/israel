@@ -83,12 +83,12 @@
               <input class="form__name form__name--header-popup" id="name" name="name" type="text" placeholder="имя" required="">
 
               <label class="visually-hidden" for="tel">Телефон</label>
-              <input class="form__tel form__tel--header-popup tel" id="tel" name="tel" type="tel" maxlength="18" minlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон" required="">
+              <input class="form__tel form__tel--header-popup tel" id="tel" name="tel" type="tel" maxlength="18" minlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон">
 
               <button class="form__btn form__btn--header-popup btn" type="submit" aria-label="Отправить">перезвоните мне</button>
               <div class="form__checkbox">
                 <label for="checkbox">
-                  <input class="form__input-checkbox visually-hidden" type="checkbox" id="checkbox" name="checkbox" checked="">
+                  <input class="form__input-checkbox visually-hidden" type="checkbox" id="checkbox" name="checkbox" checked="" required="">
                   <span class="form__indicator"></span>
                   Нажимая на кнопку, вы даёте согласие на обработку персональных данных
                 </label>
@@ -201,7 +201,7 @@
         <form class="contact__form form" method="post" enctype="multipart/form-data" autocomplete="off" action="http://echo.htmlacademy.ru">
           <div class="form__info form__info--contact">
             <label class="contact__form-label visually-hidden" for="telephone">Введите телефон</label>
-            <input class="form__tel form__tel--contact tel" id="telephone" name="tel" type="tel" maxlength="18" minlength="18" placeholder="телефон" required="">
+            <input class="form__tel form__tel--contact tel" id="telephone" name="tel" type="tel" maxlength="18" minlength="18" placeholder="телефон" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}">
             <button class="form__btn form__btn--contact btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
         </form>
@@ -579,7 +579,7 @@
             <input class="form__name form__name--feedback" id="feedback__name" name="name" type="text" placeholder="имя" required="">
 
             <label class="visually-hidden" for="phone">Телефон</label>
-            <input class="form__tel form__tel--feedback tel" id="phone" name="tel" type="tel" maxlength="18" minlength="18" placeholder="телефон" required="">
+            <input class="form__tel form__tel--feedback tel" id="phone" name="tel" type="tel" maxlength="18" minlength="18" pattern="\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}" placeholder="телефон">
 
             <button class="form__btn form__btn--feedback btn" type="submit" aria-label="Отправить">перезвоните мне</button>
           </div>
