@@ -147,20 +147,6 @@
     showMessage('error');
   };
 
-
-  // submit
-  var submitHandler = function (evt) {
-    form.forEach(function (element) {
-      save(new FormData(element), successPostHandler, errorPostHandler);
-    });
-    evt.preventDefault();
-  };
-
-  form.forEach(function (element) {
-    element.addEventListener('submit', submitHandler);
-  });
-
-
   // localStorage
   var subPopup = function () {
     var name = document.querySelector('.form__name--header-popup');
@@ -258,6 +244,18 @@
   telInput.forEach(function (el) {
     el.addEventListener('input', telInputHandler);
     el.addEventListener('change', changeBorderHandler);
+  });
+
+  // submit
+  var submitHandler = function (evt) {
+    form.forEach(function (element) {
+      save(new FormData(element), successPostHandler, errorPostHandler);
+    });
+    evt.preventDefault();
+  };
+
+  form.forEach(function (element) {
+    element.addEventListener('submit', submitHandler);
   });
 
   // tabs
